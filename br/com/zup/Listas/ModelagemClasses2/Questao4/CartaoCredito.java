@@ -6,6 +6,7 @@ public class CartaoCredito {
     double limite;
     double saldo;
     String nomeCliente;
+    double totalCompras = 0;
 
     public CartaoCredito(double limite, String nomeCliente){
         this.limite = limite;
@@ -28,9 +29,16 @@ public class CartaoCredito {
             saldo -= valorCompra;
         }
     }
+    public double compras(double valor){
+        totalCompras += valor;
+        return totalCompras;
+    }
     public void imprimeFatura(){
-        System.out.println("Olá, "+nomeCliente);
+        //System.out.println("Olá, "+nomeCliente);
+        System.out.println("----------------------------------");
         System.out.println("Limite total: R$ "+limite);
+        System.out.println("Total de compras : -R$ "+totalCompras);
         System.out.println("Saldo disponível: R$ "+saldo);
+        System.out.println("----------------------------------");
     }
 }
