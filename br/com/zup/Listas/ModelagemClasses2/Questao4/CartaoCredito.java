@@ -17,8 +17,9 @@ public class CartaoCredito {
         saldo += aumento;
     }
     public void diminuiLimite(double reducao){
-        limite -= reducao;
-        saldo -= reducao;
+            limite -= reducao;
+            saldo -= reducao;
+
     }
     public void realizaCompra(double valorCompra){
         if (valorCompra > limite || valorCompra > saldo) {

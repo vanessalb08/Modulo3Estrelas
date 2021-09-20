@@ -36,22 +36,36 @@ public class Main {
             else if(opcao == 2){
                 System.out.println("Qual o valor da redução? ");
                 double reducao = leitor.nextDouble();
-                cartao1.diminuiLimite(reducao);
-                System.out.println("--------------------------------------------------------------------");
-                System.out.println("Limite reduzido em R$ "+ reducao + ". Novo limite é R$ "+cartao1.limite);
-                System.out.println("--------------------------------------------------------------------");
+                if (reducao > cartao1.saldo){
+                    System.out.println("Redução maior que saldo disponível. Saldo disponível é R$" + cartao1.saldo);
+                }
+                else{
+                    cartao1.diminuiLimite(reducao);
+                    System.out.println("--------------------------------------------------------------------");
+                    System.out.println("Limite reduzido em R$ "+ reducao + ". Novo limite é R$ "+cartao1.limite);
+                    System.out.println("--------------------------------------------------------------------");
+                }
+
             }
             else if (opcao == 3){
                 System.out.println("Qual o valor da compra?");
                 double compra = leitor.nextDouble();
-                cartao1.realizaCompra(compra);
-                System.out.println("--------------------------------------------------------------------");
-                System.out.printf("Compra de R$ %.2f realizada. Saldo restante R$ %.2f\n",compra,cartao1.saldo);
-                System.out.println("--------------------------------------------------------------------");
-                //Adicionando a compra na lista
-                totalCompras.add(compra);
-                //Somando compra ao total de compras feitas
-                cartao1.compras(compra);
+
+                if (compra <= cartao1.saldo){
+                    cartao1.realizaCompra(compra);
+                    System.out.println("--------------------------------------------------------------------");
+                    System.out.printf("Compra de R$ %.2f realizada. Saldo restante R$ %.2f\n",compra,cartao1.saldo);
+                    System.out.println("--------------------------------------------------------------------");
+                    //Adicionando a compra na lista
+                    totalCompras.add(compra);
+                    //Somando compra ao total de compras feitas
+                    cartao1.compras(compra);
+                }
+                else{
+                    cartao1.realizaCompra(compra);
+                }
+
+
             }
             //
             else if (opcao == 4){
