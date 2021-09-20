@@ -1,4 +1,4 @@
-package br.com.zup.ListaAquecimento;
+package br.com.zup.Listas.ListaAquecimento;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package br.com.zup.ListaModelagem.LevelUp;
+package br.com.zup.Listas.ListaModelagem.LevelUp;
 
 public class Pais {
     String nome;

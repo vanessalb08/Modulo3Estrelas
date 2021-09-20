@@ -1,6 +1,5 @@
-package br.com.zup.ListaAquecimento;
+package br.com.zup.Listas.ListaAquecimento;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
