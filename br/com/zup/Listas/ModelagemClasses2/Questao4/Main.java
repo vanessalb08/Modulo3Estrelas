@@ -15,13 +15,7 @@ public class Main {
         cartao1.saldo = cartao1.limite;
         System.out.println("Bem vindx " + cartao1.nomeCliente);
         while (menu){
-            System.out.println("Por favor, digite a opção desejada:");
-            System.out.println("1 - Aumentar Limite");
-            System.out.println("2 - Diminuir Limite");
-            System.out.println("3 - Realizar compra");
-            System.out.println("4 - Mostrar compras feitas");
-            System.out.println("5 - Mostrar fatura");
-            System.out.println("6 - Sair");
+            cartao1.menu();
             opcao = leitor.nextInt();
             leitor.nextLine();
 

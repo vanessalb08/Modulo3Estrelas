@@ -42,4 +42,13 @@ public class CartaoCredito {
         System.out.println("Saldo disponível: R$ "+saldo);
         System.out.println("----------------------------------");
     }
+    public void menu(){
+        System.out.println("Por favor, digite a opção desejada:");
+        System.out.println("1 - Aumentar Limite");
+        System.out.println("2 - Diminuir Limite");
+        System.out.println("3 - Realizar compra");
+        System.out.println("4 - Mostrar compras feitas");
+        System.out.println("5 - Mostrar fatura");
+        System.out.println("6 - Sair");
+    }
 }
