@@ -15,7 +15,7 @@ public class Main {
         cartao1.saldo = cartao1.limite;
         System.out.println("Bem vindx " + cartao1.nomeCliente);
         while (menu){
-            System.out.println("Por favor, digita a opção desejada:");
+            System.out.println("Por favor, digite a opção desejada:");
             System.out.println("1 - Aumentar Limite");
             System.out.println("2 - Diminuir Limite");
             System.out.println("3 - Realizar compra");
@@ -70,10 +70,14 @@ public class Main {
             //
             else if (opcao == 4){
                 if (totalCompras.size()==0){
+                    System.out.println("-------------------------------");
                     System.out.println("Nenhuma compra foi realizada");
+                    System.out.println("-------------------------------");
                 }
                 else{
+                    System.out.println("-------------------------------");
                     System.out.println("Compras realizadas:" + totalCompras);
+                    System.out.println("-------------------------------");
                 }
 
             }
