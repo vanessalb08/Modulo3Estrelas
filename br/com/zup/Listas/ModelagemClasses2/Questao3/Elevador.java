@@ -41,15 +41,16 @@ public class Elevador {
             System.out.println("Andar não existe!");
         }
         else{
-            andarAtual += novoAndar;
+            andarAtual = novoAndar;
         }
     }
     public void desce (int novoAndar){
-        if (andarAtual == 0){
+        int total = andarAtual + novoAndar;
+        if (andarAtual == 0 || (andarAtual - total) < 0){
             System.out.println("Já estamos no térreo");
         }
         else{
-            andarAtual -= novoAndar;
+            andarAtual = novoAndar;
         }
     }
 }
