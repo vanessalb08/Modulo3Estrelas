@@ -1,4 +1,4 @@
-package br.com.zup.Listas.ListaComplementar1;
+package br.com.zup.Listas.ListaComplementar1.Questao1;
 
 public class Bola {
     String cor;
