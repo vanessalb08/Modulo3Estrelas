@@ -17,7 +17,6 @@ public class ControleRemoto {
     public void setCanal(int canal){
         this.canal = canal;
     }
-
     //Aumentar ou diminuir a potência do volume de som em uma unidade de cada vez;
     public void aumentaVolume(){
         volume +=1;
@@ -35,6 +34,10 @@ public class ControleRemoto {
     //Trocar para um canal indicado;
     public void trocaCanal(int novoCanal){
         canal = novoCanal;
+    }
+    public void mostraDados(){
+        System.out.println("Canal: "+ canal);
+        System.out.println("Volume: "+ volume);
     }
 
 }
