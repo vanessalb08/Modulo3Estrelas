@@ -18,21 +18,26 @@ public class Elevador {
     }
 
     public void entra(int pessoas){
-        if ((qtdPessoa + pessoas) <= capacidade){
-            qtdPessoa += pessoas;
-        }
-        else{
-            System.out.println("Capacidade excedida!");
+        int totalDeViajantes = pessoas + qtdPessoa;
+
+        if (totalDeViajantes > capacidade){
+            System.out.println("O elevador não comporta tal quantidade. ");
+            System.out.println("Quantidade de pessoas que excedeu: " +(totalDeViajantes-capacidade));
+        }else{
+            qtdPessoa = totalDeViajantes;
         }
     }
     public void sai(int pessoas){
-        if (qtdPessoa > 0){
-            qtdPessoa -= pessoas;
-        }
-        else{
-            System.out.println("Não há ninguém para sair!");
+
+        int totalDeViajantes = qtdPessoa - pessoas;
+
+        if (totalDeViajantes < 0){
+            System.out.println("Você não pode tirar uma quantidade maior de pessoas do que a quantidade de pessoas presentes ");
+        }else{
+            qtdPessoa = totalDeViajantes;
         }
     }
+
     public void sobe(int novoAndar){
         if (andarAtual == totalAndares){
             System.out.println("Não há pra onde subir");
@@ -41,16 +46,16 @@ public class Elevador {
             System.out.println("Andar não existe!");
         }
         else{
-            andarAtual = novoAndar;
+            andarAtual += novoAndar;
         }
     }
     public void desce (int novoAndar){
-        int total = andarAtual + novoAndar;
-        if (andarAtual == 0 || (andarAtual - total) < 0){
+        int total = andarAtual - novoAndar;
+        if (andarAtual == 0 | (andarAtual - total) < 0){
             System.out.println("Já estamos no térreo");
         }
         else{
-            andarAtual = novoAndar;
+            andarAtual = total;
         }
     }
 }

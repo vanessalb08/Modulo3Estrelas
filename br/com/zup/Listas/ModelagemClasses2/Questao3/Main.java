@@ -10,6 +10,9 @@ public class Main {
         elev1.entra(3);
         elev1.mostraDados();
         System.out.println("----------------------------");
+        elev1.sobe(2);
+        elev1.mostraDados();
+        System.out.println("----------------------------");
         elev1.entra(5);
         elev1.mostraDados();
         System.out.println("----------------------------");
