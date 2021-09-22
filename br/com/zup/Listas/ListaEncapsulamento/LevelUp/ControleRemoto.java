@@ -1,10 +1,5 @@
 package br.com.zup.Listas.ListaEncapsulamento.LevelUp;
 
-/** O controle de volume permite:
- -  Aumentar ou diminuir a potência do volume de som em uma unidade de cada vez;
- - Aumentar e diminuir o número do canal em uma unidade;
- - Trocar para um canal indicado;
-* */
 public class ControleRemoto {
     private int volume;
     private int canal;
@@ -23,5 +18,23 @@ public class ControleRemoto {
         this.canal = canal;
     }
 
+    //Aumentar ou diminuir a potência do volume de som em uma unidade de cada vez;
+    public void aumentaVolume(){
+        volume +=1;
+    }
+    public void diminuiVolume(){
+        volume -= 1;
+    }
+    //Aumentar e diminuir o número do canal em uma unidade;
+    public void aumentaCanal1(){
+        canal += 1;
+    }
+    public void diminuiCanal1(){
+        canal -= 1;
+    }
+    //Trocar para um canal indicado;
+    public void trocaCanal(int novoCanal){
+        canal = novoCanal;
+    }
 
 }
