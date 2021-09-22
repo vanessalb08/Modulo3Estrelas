@@ -1,7 +1,5 @@
 package br.com.zup.Listas.ModelagemClasses2.Questao2;
 
-import br.com.zup.Aula3POOMetodos.Exemplo1.ContaCorrente;
-
 public class ContaBancaria {
     int numeroConta;
     double saldo;
