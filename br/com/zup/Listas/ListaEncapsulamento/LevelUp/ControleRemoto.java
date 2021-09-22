@@ -4,6 +4,10 @@ public class ControleRemoto {
     private int volume;
     private int canal;
 
+    public ControleRemoto(int volume,int canal){
+        this.volume = volume;
+        this.canal = canal;
+    }
     //Getters e Setters
     public int getVolume(){
         return volume;
@@ -35,9 +39,6 @@ public class ControleRemoto {
     public void trocaCanal(int novoCanal){
         canal = novoCanal;
     }
-    public void mostraDados(){
-        System.out.println("Canal: "+ canal);
-        System.out.println("Volume: "+ volume);
-    }
+
 
 }
