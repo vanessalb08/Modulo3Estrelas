@@ -5,6 +5,7 @@ public class Pessoa {
     private String nome;
     private int dataNascimento;
     private double altura;
+    private int idade;
 
     //Crie os métodos públicos necessários para sets e gets
     public String getNome(){
@@ -26,16 +27,18 @@ public class Pessoa {
         this.altura = altura;
     }
 
+    /* Crie um método para calcular a idade da pessoa. */
+    public int anosCompletos(int idade){
+        this.idade = idade;
+        idade = 2021 - dataNascimento;
+        return idade;
+    }
     //Método para imprimir todos dados de uma pessoa
     public void imprimeDados(){
         System.out.println("Nome: "+ nome);
         System.out.println("Ano de nascimento: "+ dataNascimento);
-        System.out.println("Altura: "+altura);
+        System.out.println("Altura: "+ altura);
+        System.out.println("Idade: "+ anosCompletos(idade));
     }
-    /* Crie um método para calcular a idade da pessoa. */
-    public int idade(int idade){
-        idade = 2021 - dataNascimento;
-        System.out.println("Idade: "+ idade);
-        return idade;
-    }
+
 }

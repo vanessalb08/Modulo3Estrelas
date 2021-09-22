@@ -9,6 +9,6 @@ public class Main {
         people.setAltura(1.57);
 
         people.imprimeDados();
-        people.idade(people.getDataNascimento());
+
     }
 }
