@@ -1,4 +1,4 @@
-package br.com.zup.Listas.ListaEncapsulamento;
+package br.com.zup.Listas.ListaEncapsulamento.Questao1;
 
 import br.com.zup.Listas.ModelagemClasses2.Questao2.ContaBancaria;
 

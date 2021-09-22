@@ -1,4 +1,4 @@
-package br.com.zup.Listas.ListaEncapsulamento;
+package br.com.zup.Listas.ListaEncapsulamento.Questao1;
 public class ContaBancaria {
     private int numeroConta;
     private double saldo;
