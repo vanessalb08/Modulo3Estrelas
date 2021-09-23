@@ -1,44 +1,47 @@
 package br.com.zup.Listas.ListaEncapsulamento.LevelUp;
 
 public class ControleRemoto {
-    private int volume;
-    private int canal;
+    private Televisao tv;
 
-    public ControleRemoto(int volume,int canal){
-        this.volume = volume;
-        this.canal = canal;
+    public ControleRemoto(Televisao tv) {
+        this.tv = tv;
     }
     //Getters e Setters
-    public int getVolume(){
-        return volume;
+
+    public Televisao getTv() {
+        return tv;
     }
-    public void setVolume(int volume){
-        this.volume = volume;
-    }
-    public int getCanal(){
-        return canal;
-    }
-    public void setCanal(int canal){
-        this.canal = canal;
-    }
-    //Aumentar ou diminuir a potência do volume de som em uma unidade de cada vez;
-    public void aumentaVolume(){
-        volume +=1;
-    }
-    public void diminuiVolume(){
-        volume -= 1;
-    }
-    //Aumentar e diminuir o número do canal em uma unidade;
-    public void aumentaCanal1(){
-        canal += 1;
-    }
-    public void diminuiCanal1(){
-        canal -= 1;
-    }
-    //Trocar para um canal indicado;
-    public void trocaCanal(int novoCanal){
-        canal = novoCanal;
+    public void setTv(Televisao tv) {
+        this.tv = tv;
     }
 
+    //Aumentar ou diminuir a potência do volume de som em uma unidade de cada vez;
+    public void aumentaVolume(){
+        int aumenta = tv.getVolume() + 1;
+        tv.setVolume(aumenta);
+    }
+    public void diminuiVolume(){
+        int diminui = tv.getVolume() - 1;
+        tv.setVolume(diminui);
+    }
+    //Aumentar e diminuir o número do canal em uma unidade;
+    public void aumentaCanal(){
+        int aumenta = tv.getCanal() + 1;
+        tv.setCanal(aumenta);
+    }
+    public void diminuiCanal(){
+        int diminui = tv.getCanal() - 1;
+        tv.setCanal(diminui);
+    }
+    //Trocar para um canal indicado;
+    public void novoCanal(int novo){
+        tv.setCanal(novo);
+    }
+
+    //Mostrar canal e volume
+    public void mostraDados(){
+        System.out.println("Canal: "+ tv.getCanal());
+        System.out.println("Volume: "+ tv.getVolume());
+    }
 
 }

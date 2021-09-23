@@ -1,43 +1,28 @@
 package br.com.zup.Listas.ListaEncapsulamento.LevelUp;
 
 public class Televisao {
-    private ControleRemoto controle;
-    private int canalAtual;
-    private int volumeAtual;
+    private int canal = 0;
+    private int volume = 0;
 
-    public ControleRemoto getControle(){
-        return controle;
-    }
-    public void setControle(ControleRemoto controle){
-        this.controle = controle;
-    }
-    public int getCanalAtual() {
-        canalAtual = controle.getCanal();
-        return canalAtual;
-    }
-    public void setControle(int canalAtual){
-        this.canalAtual = canalAtual;
-    }
-    public int getVolumeAtual(){
-        volumeAtual = controle.getVolume();
-        return volumeAtual;
-    }
-    public void setVolumeAtual(int volumeAtual){
-        this.volumeAtual = volumeAtual;
+    public Televisao(int canalAtual, int volumeAtual) {
+        this.canal = canalAtual;
+        this.volume = volumeAtual;
     }
 
-    public void aumenta(){
-        controle.aumentaCanal1();
-    }
-    public void diminui(){
-        controle.diminuiCanal1();
-    }
-    public void troca(int novo){
-        controle.trocaCanal(novo);
+    public int getCanal() {
+        return canal;
     }
 
-    public void mostraDados(){
-        System.out.println("Canal: " + canalAtual);
-        System.out.println("Volume: " + volumeAtual);
+    public void setCanal(int canal) {
+        this.canal = canal;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 }
+
