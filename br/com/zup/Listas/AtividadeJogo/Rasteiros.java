@@ -26,7 +26,7 @@ public class Rasteiros extends Inimigos {
     }
 
     //Métodos
-    private double aplicarDados(){
+    public double aplicarDados(){
         return danoEspinhos;
     }
 }

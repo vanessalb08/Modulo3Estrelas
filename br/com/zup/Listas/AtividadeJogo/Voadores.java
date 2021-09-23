@@ -27,7 +27,7 @@ public class Voadores extends Inimigos{
     }
 
     //Métodos
-    private double aplicarDano(){
+    public double aplicarDano(){
         return danoTiro;
     }
 }
