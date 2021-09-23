@@ -43,5 +43,11 @@ public class ControleRemoto {
         System.out.println("Canal: "+ tv.getCanal());
         System.out.println("Volume: "+ tv.getVolume());
     }
+/*
+    public String retornaDados(){
+
+        return "Canal: " + tv.getCanal() +
+                "\nVolume: " + tv.getVolume();
+    }*/
 
 }
