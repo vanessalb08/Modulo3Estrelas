@@ -27,15 +27,15 @@ public class Heroi {
     public void setVida(double vida) {
         this.vida = vida;
     }
-
     //Criando métodos
     public void trocarNome(String nome){
-        this.nome = nome;
+        setNome(nome);
     }
     public void receberDano(Double dano){
-
+        double novaVida = getVida() - dano;
+        setVida(novaVida);
     }
     public double exibirVida(){
-        return exibirVida();
+        return getVida();
     }
 }

@@ -27,6 +27,6 @@ public class Magos extends Heroi{
     }
     //Métodos
     private double aplicarMagia(){
-        return aplicarMagia();
+        return poderMagico;
     }
 }

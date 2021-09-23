@@ -28,15 +28,15 @@ public class Inimigos {
     public void setVida(double vida) {
         this.vida = vida;
     }
-
     //Métodos
     public void trocarNome(String nome){
-        this.nome = nome;
+       setNome(nome);
     }
     public void receberDano(double dano){
-
+        double novaVida = getVida() - dano;
+        setVida(novaVida);
     }
     public double exibirVida(){
-        return exibirVida();
+        return getVida();
     }
 }
