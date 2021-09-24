@@ -60,4 +60,9 @@ public class Universidade {
         this.salario = salario;
     }
 
+    //Métodos
+    public double aumentoSalario(){
+        double salarioAumentado = getSalario() * 1.1;
+        return salarioAumentado;
+    }
 }

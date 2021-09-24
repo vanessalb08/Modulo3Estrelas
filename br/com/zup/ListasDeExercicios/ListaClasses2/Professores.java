@@ -62,5 +62,9 @@ public class Professores extends Universidade {
         this.quantidadeTurmas = quantidadeTurmas;
     }
     //Métodos
+    public int adcionaTurma(){
+        int adicionaTurma = getQuantidadeTurmas() + 1;
+        return adicionaTurma;
+    }
 
 }
