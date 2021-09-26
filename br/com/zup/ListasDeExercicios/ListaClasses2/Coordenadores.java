@@ -34,7 +34,7 @@ public class Coordenadores extends Universidade {
         System.out.println("Salário aumentado em 5%");
         return salarioAumentado;
     }
-    public void adicionaListaProf(Professores novoProfessor){
+    public void adicionaProfessor(Professores novoProfessor){
        professores.add(novoProfessor);
     }
     public void exibeListaProf(){

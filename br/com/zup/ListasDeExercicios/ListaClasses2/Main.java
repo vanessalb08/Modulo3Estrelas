@@ -24,11 +24,11 @@ public class Main {
         System.out.println("Novo salário: R$ "+ funcionariosAdministrativos.getSalario());
         //Testando Coordenadores
         System.out.println("Lista professores coordenados: \n"+ coordenadores.getProfessores());
-        coordenadores.adicionaListaProf(professor1);
+        coordenadores.adicionaProfessor(professor1);
         System.out.println("_______________________________");
         coordenadores.exibeListaProf();
         System.out.println("_______________________________");
-        coordenadores.adicionaListaProf(professor2);
+        coordenadores.adicionaProfessor(professor2);
         coordenadores.exibeListaProf();
     }
 }
