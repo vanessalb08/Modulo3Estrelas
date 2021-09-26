@@ -64,6 +64,8 @@ public class Professores extends Universidade {
     //Métodos
     public int adcionaTurma(){
         int adicionaTurma = getQuantidadeTurmas() + 1;
+        setQuantidadeTurmas(adicionaTurma);
+        System.out.println("Turma adicionada!");
         return adicionaTurma;
     }
 

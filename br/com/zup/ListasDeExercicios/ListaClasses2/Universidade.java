@@ -63,6 +63,8 @@ public class Universidade {
     //Métodos
     public double aumentoSalario(){
         double salarioAumentado = getSalario() * 1.1;
+        setSalario(salarioAumentado);
+        System.out.println("Salário aumentado em 10%");
         return salarioAumentado;
     }
 }

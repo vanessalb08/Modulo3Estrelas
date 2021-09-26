@@ -30,6 +30,8 @@ public class Coordenadores extends Universidade {
     @Override
     public double aumentoSalario(){
         double salarioAumentado = getSalario() * 1.05;
+        setSalario(salarioAumentado);
+        System.out.println("Salário aumentado em 5%");
         return salarioAumentado;
     }
 }
