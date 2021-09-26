@@ -34,4 +34,5 @@ public class Coordenadores extends Universidade {
         System.out.println("Salário aumentado em 5%");
         return salarioAumentado;
     }
+
 }
