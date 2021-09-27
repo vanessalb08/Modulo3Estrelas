@@ -13,12 +13,10 @@ public class Main {
         System.out.println("--------Professores--------");
         System.out.println("Nome: "+ professor1.getNome());
         System.out.println("Salário: "+ professor1.getSalario());
-       // System.out.println("Quantidade de turmas: "+ professor1.getQuantidadeTurmas());
         professor1.adcionaTurma(turma1);
         professor1.exibeTurmas();
         professor2.adcionaTurma(turma2);
         professor2.exibeTurmas();
-       // System.out.println("Novo n° de Turmas: "+professor1.getQuantidadeTurmas());
         professor1.aumentoSalario();
         System.out.println("O novo salário é: "+professor1.getSalario());
         //Testando Funcionários administrativos
@@ -28,8 +26,9 @@ public class Main {
         funcionariosAdministrativos.aumentoSalario();
         System.out.println("Novo salário: R$ "+ funcionariosAdministrativos.getSalario());
         //Testando Coordenadores
-        System.out.println("Lista professores coordenados: \n"+ coordenadores.getProfessores());
+       // System.out.println("Lista professores coordenados: \n"+ coordenadores.getProfessores());
         coordenadores.adicionaProfessor(professor1);
+        coordenadores.adicionaProfessor(professor2);
         System.out.println("_______________________________");
         coordenadores.exibeListaProf();
         System.out.println("_______________________________");

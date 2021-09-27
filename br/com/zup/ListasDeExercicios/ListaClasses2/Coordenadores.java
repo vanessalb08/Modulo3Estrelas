@@ -4,26 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Coordenadores extends Universidade {
-    private List<Professores> professores = new ArrayList<>();
+    private Professores [] professores   = new Professores[2];
+    private int indice = 0;
 
     public Coordenadores() {
     }
 
-    public Coordenadores(List<Professores> professores) {
+    public Coordenadores(Professores[] professores) {
         this.professores = professores;
     }
 
-    public Coordenadores(String nome, String cpf, int numeroRegistro, String orgaoLotacao, double salario, List<Professores> professores) {
+    public Coordenadores(String nome, String cpf, int numeroRegistro, String orgaoLotacao, double salario, Professores[] professores) {
         super(nome, cpf, numeroRegistro, orgaoLotacao, salario);
         this.professores = professores;
     }
 
-    public List<Professores> getProfessores() {
+    public Professores[] getProfessores() {
         return professores;
     }
 
-    public void setProfessores(List<Professores> professores) {
+    public void setProfessores(Professores[] professores) {
         this.professores = professores;
+    }
+
+    public int getIndice() {
+        return indice;
+    }
+
+    public void setIndice(int indice) {
+        this.indice = indice;
     }
 
     //Métodos
@@ -35,7 +44,13 @@ public class Coordenadores extends Universidade {
         return salarioAumentado;
     }
     public void adicionaProfessor(Professores novoProfessor){
-       professores.add(novoProfessor);
+      if (indice <= professores.length){
+          professores[indice] = novoProfessor;
+          indice++;
+      }
+      else{
+          System.out.println("Quantidade máxima atingida!");
+      }
     }
     public void exibeListaProf(){
         System.out.println("Lista de Professores coordenados:");
