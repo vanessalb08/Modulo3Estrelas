@@ -1,9 +1,12 @@
 package br.com.zup.ListasDeExercicios.Imobiliaria;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Imovel {
     private String endereco;
     private double valorAluguel;
-    private Moradores moradores;
+    private List<Moradores> moradoresImovel = new ArrayList<>();
 
     //Contrutores
 
@@ -11,11 +14,12 @@ public class Imovel {
     public Imovel() {
     }
 
-    public Imovel(String endereco, double valorAluguel, Moradores moradores) {
+    public Imovel(String endereco, double valorAluguel, List<Moradores> moradoresImovel) {
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
-        this.moradores = moradores;
+        this.moradoresImovel = moradoresImovel;
     }
+
     //Getters e Setters
 
     public String getEndereco() {
@@ -34,11 +38,16 @@ public class Imovel {
         this.valorAluguel = valorAluguel;
     }
 
-    public Moradores getMoradores() {
-        return moradores;
+    public List<Moradores> getMoradoresImovel() {
+        return moradoresImovel;
     }
 
-    public void setMoradores(Moradores moradores) {
-        this.moradores = moradores;
+    public void setMoradoresImovel(List<Moradores> moradoresImovel) {
+        this.moradoresImovel = moradoresImovel;
+    }
+
+    //Métodos
+    public void adicionaMoradorImovel(Moradores novoMorador){
+        moradoresImovel.add(novoMorador);
     }
 }
