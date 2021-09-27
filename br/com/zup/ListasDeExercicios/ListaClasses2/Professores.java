@@ -1,10 +1,13 @@
 package br.com.zup.ListasDeExercicios.ListaClasses2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Professores extends Universidade {
     private String nivelGraduacao;
     private String disciplionaMinistrada;
     private int quantidadeAlunos;
-    private int quantidadeTurmas;
+    private List<Turma> quantidadeTurmas = new ArrayList<>();
 
     //Construtores
     public Professores() {
@@ -14,20 +17,21 @@ public class Professores extends Universidade {
         super(nome, cpf, numeroRegistro, orgaoLotacao, salario);
     }
 
-    public Professores(String nivelGraduacao, String disciplionaMinistrada, int quantidadeAlunos, int quantidadeTurmas) {
+    public Professores(String nivelGraduacao, String disciplionaMinistrada, int quantidadeAlunos) {
         this.nivelGraduacao = nivelGraduacao;
         this.disciplionaMinistrada = disciplionaMinistrada;
         this.quantidadeAlunos = quantidadeAlunos;
-        this.quantidadeTurmas = quantidadeTurmas;
+
     }
 
-    public Professores(String nome, String cpf, int numeroRegistro, String orgaoLotacao, double salario, String nivelGraduacao, String disciplionaMinistrada, int quantidadeAlunos, int quantidadeTurmas) {
+    public Professores(String nome, String cpf, int numeroRegistro, String orgaoLotacao, double salario, String nivelGraduacao, String disciplionaMinistrada, int quantidadeAlunos) {
         super(nome, cpf, numeroRegistro, orgaoLotacao, salario);
         this.nivelGraduacao = nivelGraduacao;
         this.disciplionaMinistrada = disciplionaMinistrada;
         this.quantidadeAlunos = quantidadeAlunos;
-        this.quantidadeTurmas = quantidadeTurmas;
+
     }
+
     //Getters e Setters
 
     public String getNivelGraduacao() {
@@ -54,19 +58,18 @@ public class Professores extends Universidade {
         this.quantidadeAlunos = quantidadeAlunos;
     }
 
-    public int getQuantidadeTurmas() {
-        return quantidadeTurmas;
-    }
 
-    public void setQuantidadeTurmas(int quantidadeTurmas) {
-        this.quantidadeTurmas = quantidadeTurmas;
-    }
     //Métodos
-    public int adcionaTurma(){
-        int adicionaTurma = getQuantidadeTurmas() + 1;
-        setQuantidadeTurmas(adicionaTurma);
-        System.out.println("Turma adicionada!");
-        return adicionaTurma;
+    public void adcionaTurma(Turma novaTurma){
+       quantidadeTurmas.add(novaTurma);
+    }
+    public void exibeTurmas(){
+        System.out.println("-------------------------------------");
+        System.out.println("Lista de Turmas de "+getNome()+": ");
+        for (Turma referencia : quantidadeTurmas){
+            System.out.println("Quantidade de alunos: "+referencia.getQuantAlunos());
+            System.out.println("Código de turma: "+ referencia.getCodigoTurma());
+        }
     }
 
 }

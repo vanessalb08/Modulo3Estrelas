@@ -38,6 +38,7 @@ public class Coordenadores extends Universidade {
        professores.add(novoProfessor);
     }
     public void exibeListaProf(){
+        System.out.println("Lista de Professores coordenados:");
         for(Professores referencia : professores){
             System.out.println("Nome: "+ referencia.getNome());
         }
