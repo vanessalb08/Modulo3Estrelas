@@ -31,6 +31,7 @@ public class Main {
        // System.out.println("Lista professores coordenados: \n"+ coordenadores.getProfessores());
         coordenadores.adicionaProfessor(professor1);
         coordenadores.adicionaProfessor(professor2);
+        coordenadores.adicionaProfessor(professor2);
         System.out.println("_______________________________");
         coordenadores.exibeListaProf();
         System.out.println("_______________________________");

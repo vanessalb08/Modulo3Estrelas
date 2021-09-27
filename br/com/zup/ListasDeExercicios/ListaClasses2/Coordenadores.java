@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Coordenadores extends Universidade {
-    private Professores [] professores   = new Professores[2];
+    private Professores [] professores   = new Professores[3];
     private int indice = 0;
 
     public Coordenadores() {
@@ -44,7 +44,7 @@ public class Coordenadores extends Universidade {
         return salarioAumentado;
     }
     public void adicionaProfessor(Professores novoProfessor){
-      if (indice <= professores.length){
+      if (indice < professores.length){
           if (professores[indice] == null){
               professores[indice] = novoProfessor;
               indice++;
