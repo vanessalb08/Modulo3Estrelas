@@ -45,8 +45,10 @@ public class Coordenadores extends Universidade {
     }
     public void adicionaProfessor(Professores novoProfessor){
       if (indice <= professores.length){
-          professores[indice] = novoProfessor;
-          indice++;
+          if (professores[indice] == null){
+              professores[indice] = novoProfessor;
+              indice++;
+          }
       }
       else{
           System.out.println("Quantidade máxima atingida!");

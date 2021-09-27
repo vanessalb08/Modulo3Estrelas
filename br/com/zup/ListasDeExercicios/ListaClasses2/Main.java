@@ -13,6 +13,8 @@ public class Main {
         System.out.println("--------Professores--------");
         System.out.println("Nome: "+ professor1.getNome());
         System.out.println("Salário: "+ professor1.getSalario());
+        System.out.println("Nome: "+ professor2.getNome());
+        System.out.println("Salário: "+ professor2.getSalario());
         professor1.adcionaTurma(turma1);
         professor1.exibeTurmas();
         professor2.adcionaTurma(turma2);
