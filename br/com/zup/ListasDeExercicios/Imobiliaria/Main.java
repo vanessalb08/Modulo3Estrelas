@@ -2,29 +2,75 @@ package br.com.zup.ListasDeExercicios.Imobiliaria;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Imobiliaria imoveis = new Imobiliaria();
+        Scanner leitor = new Scanner(System.in);
+        Imobiliaria imobiliaria = new Imobiliaria();
+        int opcao;
+        boolean menu = true;
 
-        Funcionario funcionario = new Funcionario("Vanessa","42524524","8888888888");
+        while (menu){
+            System.out.println("Escolha a opção: ");
+            System.out.println("1 - Cadastrar imóvel");
+            System.out.println("2 - Exibir imóveis cadastrados");
+           // System.out.println("3 - Cadastrar morador");
+            System.out.println("3 - Sair");
 
-        Imovel imovel = new Imovel("Itabaiana",900,funcionario);
-        Imovel imovel2 = new Imovel("Rua J",1000,funcionario);
+            opcao = leitor.nextInt();
+            leitor.nextLine();
 
-        Moradores morador1Imovel1 = new Moradores("Andre","2341341",5000);
-        Moradores morador2Imovel1 = new Moradores("Mari","5263245635",3000);
+            switch (opcao){
+                case 1:
+                    System.out.println("Digite o endereço do imóvel");
+                    String endereco = leitor.nextLine();
+                    System.out.println("Digite o valor do aluguel");
+                    double valorAluguel = leitor.nextDouble();
+                    leitor.nextLine();
+                    System.out.println("Digite o funcionário responsável");
+                    String nomeFuncionario = leitor.nextLine();
+                    System.out.println("Digite o cpf do funcionário:");
+                    String cpf = leitor.nextLine();
+                    System.out.println("Digite a CTPS do funcionario");
+                    String ctps = leitor.nextLine();
 
-        Moradores morador1Imovel2  = new Moradores("Marcio","314134",24523);
-        Moradores morador2Imovel2 = new Moradores("Vanessa","21321321",31412);
+                    //Instanciando os objetos
+                    Funcionario funcionario = new Funcionario(nomeFuncionario,cpf,ctps);
+                    Imovel imovel = new Imovel(endereco,valorAluguel,funcionario);
+                    //Cadastrando imóvel na imobiliária
+                    imobiliaria.adicionarImovel(imovel);
 
-        imovel.adicionarMorador(morador1Imovel1);
-        imovel.adicionarMorador(morador2Imovel1);
-        imoveis.adicionarImovel(imovel);
-        System.out.println(imoveis);
-        imovel2.adicionarMorador(morador1Imovel2);
-        imovel2.adicionarMorador(morador2Imovel2);
-        imoveis.adicionarImovel(imovel2);
-        System.out.println(imoveis);
+                    System.out.println("Digite a quantidade de moradores:");
+                    int qtdMoradores = leitor.nextInt();
+                    leitor.nextLine();
+                    if (qtdMoradores == 0){
+                        break;
+                    }
+                    else if(qtdMoradores > 0){
+                        for (int i = 0; i < qtdMoradores ; i++){
+                            System.out.println("Digite o nome do morador: ");
+                            String nomeMorador = leitor.nextLine();
+                            System.out.println("Digite o CPF do morador: ");
+                            String cpfMorador = leitor.nextLine();
+                            System.out.println("Digite a renda do morador:");
+                            double renda = leitor.nextDouble();
+                            leitor.nextLine();
+
+                            Moradores moradores = new Moradores(nomeMorador,cpfMorador,renda);
+                            imovel.adicionarMorador(moradores);
+                            break;
+                        }
+                    }
+                    break;
+                case 2:
+                    System.out.println(imobiliaria);
+                    break;
+                case 3:
+                    System.out.println("Até Mais!");
+                    menu = false;
+                    break;
+            }
+        }
     }
 }
