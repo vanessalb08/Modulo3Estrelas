@@ -3,25 +3,22 @@ package br.com.zup.ListasDeExercicios.Imobiliaria;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//Imóvel TEM moradores
 public class Imovel {
     private String endereco;
     private double valorAluguel;
     private List<Moradores> moradoresImovel = new ArrayList<>();
+    private Funcionario funcionario;
 
     //Contrutores
-
-
-    public Imovel() {
-    }
-
-    public Imovel(String endereco, double valorAluguel, List<Moradores> moradoresImovel) {
+    public Imovel(String endereco, double valorAluguel, Funcionario funcionario) {
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
-        this.moradoresImovel = moradoresImovel;
+        this.funcionario = funcionario;
     }
 
     //Getters e Setters
-
     public String getEndereco() {
         return endereco;
     }
@@ -42,12 +39,26 @@ public class Imovel {
         return moradoresImovel;
     }
 
-    public void setMoradoresImovel(List<Moradores> moradoresImovel) {
-        this.moradoresImovel = moradoresImovel;
+    public Funcionario getFuncionario() {
+        return funcionario;
     }
 
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
+    }
     //Métodos
-    public void adicionaMoradorImovel(Moradores novoMorador){
+    public void adicionarMorador(Moradores novoMorador){
         moradoresImovel.add(novoMorador);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("Endereço: "+ endereco);
+        retorno.append("\nValor do aluguel: R$ " + valorAluguel);
+        retorno.append("\nFuncionário responsável: "+ funcionario);
+        retorno.append("\nQuantidade de moradores: "+moradoresImovel.size());
+        retorno.append("\nLista de Moradores: " + moradoresImovel);
+        return retorno.toString();
     }
 }

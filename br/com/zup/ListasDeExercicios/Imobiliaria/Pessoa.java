@@ -30,4 +30,12 @@ public class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("\n\tNome:  "+nome);
+        retorno.append("\n\tCPF: "+ cpf);
+        return retorno.toString();
+    }
 }
