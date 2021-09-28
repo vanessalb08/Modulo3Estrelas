@@ -12,6 +12,12 @@ public class Imovel {
     private Funcionario funcionario;
 
     //Contrutores
+
+    public Imovel(String endereco, double valorAluguel) {
+        this.endereco = endereco;
+        this.valorAluguel = valorAluguel;
+    }
+
     public Imovel(String endereco, double valorAluguel, Funcionario funcionario) {
         this.endereco = endereco;
         this.valorAluguel = valorAluguel;
