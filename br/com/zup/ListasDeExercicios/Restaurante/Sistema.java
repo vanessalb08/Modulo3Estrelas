@@ -11,5 +11,9 @@ public class Sistema {
         System.out.println("2 - Mostrar cardápio");
         System.out.println("3 - Sair do programa");
     }
-
+    //Automatizando entrada de dados
+    private static Scanner capturaDados(String mensagem){
+        System.out.println(mensagem);
+        return new Scanner(System.in);
+    }
 }
