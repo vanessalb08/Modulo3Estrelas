@@ -16,4 +16,12 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+    //Cadastrar Pratos
+    public static Pratos cadastrarPratos(){
+        String nomePrato = capturaDados("Digite o nome do prato: ").nextLine();
+        double valorPrato =  capturaDados("Digite o valor do prato: R$ ").nextDouble();
+
+        Pratos prato = new Pratos(nomePrato, valorPrato);
+        return prato;
+    }
 }
