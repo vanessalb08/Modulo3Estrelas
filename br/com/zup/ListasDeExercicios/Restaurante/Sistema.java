@@ -49,6 +49,13 @@ public class Sistema {
                 }
                 cardapio.adicionaPratos(prato);
             }
+            else if (opcao == 2){
+                System.out.println(cardapio);
+            }
+            else if (opcao == 3){
+                System.out.println("Volte sempre!");
+                menu = false;
+            }
         }
     }
 }
