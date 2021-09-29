@@ -13,6 +13,12 @@ public class Pratos {
         this.nomePrato = nomePrato;
         this.valorPrato = valorPrato;
     }
+
+    public Pratos(String nomePrato, double valorPrato, List<Ingredientes> ingredientes) {
+        this.nomePrato = nomePrato;
+        this.valorPrato = valorPrato;
+        this.ingredientes = ingredientes;
+    }
     //Getters e Setters
 
     public String getNomePrato() {

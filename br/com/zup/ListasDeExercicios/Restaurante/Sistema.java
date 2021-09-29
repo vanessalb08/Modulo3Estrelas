@@ -1,5 +1,7 @@
 package br.com.zup.ListasDeExercicios.Restaurante;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -21,7 +23,7 @@ public class Sistema {
         String nomePrato = capturaDados("Digite o nome do prato: ").nextLine();
         double valorPrato =  capturaDados("Digite o valor do prato: R$ ").nextDouble();
 
-        Pratos prato = new Pratos(nomePrato, valorPrato);
+        Pratos prato = new Pratos(nomePrato, valorPrato,variosIngredientes());
         return prato;
     }
     public static Ingredientes cadastrarIngredientes(){
@@ -30,6 +32,15 @@ public class Sistema {
 
         Ingredientes ingrediente = new Ingredientes(nomeIngrediente,qtdIngrediente);
         return ingrediente;
+    }
+    public static List variosIngredientes(){
+        List<Ingredientes> ingredientesLista = new ArrayList<>();
+        int qtdIngredientes = capturaDados("Digite a quantidade de ingredientes: ").nextInt();
+
+        for (int i = 0; i < qtdIngredientes ; i ++){
+            ingredientesLista.add(cadastrarIngredientes());
+        }
+        return ingredientesLista;
     }
     public static void executar(){
         Cardapio cardapio = new Cardapio();
@@ -41,12 +52,6 @@ public class Sistema {
 
             if (opcao == 1){
                 Pratos prato = cadastrarPratos();
-                int qtdIngredientes = capturaDados("Digite a quantidade de ingredientes: ").nextInt();
-
-                for (int i = 0; i<  qtdIngredientes; i++){
-                    Ingredientes ingrediente = cadastrarIngredientes();
-                    prato.cadastrarIngredientes(ingrediente);
-                }
                 cardapio.adicionaPratos(prato);
             }
             else if (opcao == 2){
