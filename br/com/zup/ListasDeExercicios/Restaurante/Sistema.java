@@ -24,4 +24,11 @@ public class Sistema {
         Pratos prato = new Pratos(nomePrato, valorPrato);
         return prato;
     }
+    public static Ingredientes cadastrarIngredientes(){
+        String nomeIngrediente = capturaDados("Digite o nome do ingrediente: ").nextLine();
+        double qtdIngrediente = capturaDados("Digite a quantidade necessária do ingrediente: ").nextDouble();
+
+        Ingredientes ingrediente = new Ingredientes(nomeIngrediente,qtdIngrediente);
+        return ingrediente;
+    }
 }
