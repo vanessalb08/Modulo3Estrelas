@@ -30,4 +30,12 @@ public class Ingredientes {
     public void setQtdIngredientes(double qtdIngredientes) {
         this.qtdIngredientes = qtdIngredientes;
     }
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("\n Nome: " + nomeIngrediente);
+        retorno.append("\n Quantidade: "+qtdIngredientes+"g");
+        return retorno.toString();
+    }
 }
+

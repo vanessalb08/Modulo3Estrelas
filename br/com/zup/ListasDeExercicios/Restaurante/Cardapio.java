@@ -1,9 +1,10 @@
 package br.com.zup.ListasDeExercicios.Restaurante;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cardapio {
-    private List<Pratos> pratos;
+    private List<Pratos> pratos = new ArrayList<>();
 
     //Contrutores
 
