@@ -35,4 +35,8 @@ public class Pratos {
         return ingredientes;
     }
 
+    //Métodos
+    public void cadastrarIngredientes(Ingredientes novoIngrediente){
+        ingredientes.add(novoIngrediente);
+    }
 }
