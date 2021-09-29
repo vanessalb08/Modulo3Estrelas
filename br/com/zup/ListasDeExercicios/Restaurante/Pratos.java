@@ -39,4 +39,15 @@ public class Pratos {
     public void cadastrarIngredientes(Ingredientes novoIngrediente){
         ingredientes.add(novoIngrediente);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("Nome: "+nomePrato);
+        retorno.append("\nValor: R$ "+ valorPrato);
+        retorno.append("\nIngredientes: \n");
+        retorno.append(ingredientes);
+        return retorno.toString();
+    }
+
 }
