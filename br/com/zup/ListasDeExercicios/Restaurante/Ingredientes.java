@@ -33,8 +33,8 @@ public class Ingredientes {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("\n Nome: " + nomeIngrediente);
-        retorno.append("\n Quantidade: "+qtdIngredientes+"g");
+        retorno.append("\n \t\t\tNome: " + nomeIngrediente);
+        retorno.append("\n \t\t\tQuantidade: "+qtdIngredientes+"g");
         return retorno.toString();
     }
 }

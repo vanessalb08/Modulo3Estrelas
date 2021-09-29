@@ -25,9 +25,10 @@ public class Cardapio {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append("----Cardápio----");
+        retorno.append("--------Cardápio--------");
         retorno.append("\nQuantidade de pratos: "+pratos.size());
         retorno.append("\n\t"+getPratos());
+        retorno.append("------------------------");
         return retorno.toString();
     }
 }

@@ -50,9 +50,9 @@ public class Pratos {
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append("Nome: "+nomePrato);
-        retorno.append("\nValor: R$ "+ valorPrato);
-        retorno.append("\n O prato possui "+ingredientes.size()+" ingredientes: \n");
-        retorno.append("\t"+ingredientes);
+        retorno.append("\n\tValor: R$ "+ valorPrato);
+        retorno.append("\n\tO prato possui "+ingredientes.size()+" ingredientes:");
+        retorno.append("\t\t"+ingredientes);
         return retorno.toString();
     }
 
