@@ -7,8 +7,8 @@ public class Cardapio {
 
     //Contrutores
 
-    public Cardapio(List<Pratos> pratos) {
-        this.pratos = pratos;
+    public Cardapio() {
+
     }
     //Getters e Setters
 

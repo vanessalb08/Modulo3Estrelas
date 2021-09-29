@@ -31,4 +31,24 @@ public class Sistema {
         Ingredientes ingrediente = new Ingredientes(nomeIngrediente,qtdIngrediente);
         return ingrediente;
     }
+    public static void executar(){
+        Cardapio cardapio = new Cardapio();
+        boolean menu = true;
+
+        while(menu){
+            menu();
+            int opcao = capturaDados("Digite a opção desejada: ").nextInt();
+
+            if (opcao == 1){
+                Pratos prato = cadastrarPratos();
+                int qtdIngredientes = capturaDados("Digite a quantidade de ingredientes: ").nextInt();
+
+                for (int i = 0; i<  qtdIngredientes; i++){
+                    Ingredientes ingrediente = cadastrarIngredientes();
+                    prato.cadastrarIngredientes(ingrediente);
+                }
+                cardapio.adicionaPratos(prato);
+            }
+        }
+    }
 }
