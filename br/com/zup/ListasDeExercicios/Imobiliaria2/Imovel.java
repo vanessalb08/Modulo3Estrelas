@@ -60,6 +60,7 @@ public class Imovel {
     public void cadastrarMoradores(Morador novoMorador){
         moradoresImovel.add(novoMorador);
     }
+    //Excluir morador pelo CPF
     public Morador excluirMoradorCPF(String cpfMorador){
         Morador moradorExcluido = null;
         for (Morador refencia: moradoresImovel){
@@ -75,6 +76,7 @@ public class Imovel {
         }
         return moradorExcluido;
     }
+
 
     @Override
     public String toString() {
