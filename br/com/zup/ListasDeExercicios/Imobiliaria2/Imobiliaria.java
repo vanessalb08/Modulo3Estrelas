@@ -29,7 +29,7 @@ public class Imobiliaria {
         StringBuilder retorno = new StringBuilder();
         retorno.append("------------------Imóveis-----------------");
         retorno.append("\nExistem "+ imoveis.size()+" imóveis cadastrados");
-        retorno.append("\n\t"+imoveis);
+        retorno.append("\n"+imoveis);
         return retorno.toString();
     }
 }
