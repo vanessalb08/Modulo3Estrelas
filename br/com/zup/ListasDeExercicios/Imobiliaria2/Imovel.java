@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Imovel {
-    private double valorAluguel;
-    private String endereco;
     private Funcionario funcionarioResponsavel;
+    private String endereco;
+    private double valorAluguel;
     private List<Morador> moradoresImovel = new ArrayList<>();
 
     //Construtores
@@ -14,19 +14,18 @@ public class Imovel {
 
     }
 
-    public Imovel(double valorAluguel, String endereco, Funcionario funcionarioResponsavel) {
-        this.valorAluguel = valorAluguel;
-        this.endereco = endereco;
+    public Imovel(Funcionario funcionarioResponsavel, String endereco, double valorAluguel) {
         this.funcionarioResponsavel = funcionarioResponsavel;
+        this.endereco = endereco;
+        this.valorAluguel = valorAluguel;
     }
 
-    public Imovel(double valorAluguel, String endereco, Funcionario funcionarioResponsavel, List<Morador> moradoresImovel) {
-        this.valorAluguel = valorAluguel;
-        this.endereco = endereco;
+    public Imovel(Funcionario funcionarioResponsavel, String endereco, double valorAluguel, List<Morador> moradoresImovel) {
         this.funcionarioResponsavel = funcionarioResponsavel;
+        this.endereco = endereco;
+        this.valorAluguel = valorAluguel;
         this.moradoresImovel = moradoresImovel;
     }
-
     //Getters e Setters
 
     public double getValorAluguel() {
@@ -58,14 +57,17 @@ public class Imovel {
     }
 
     //Métodos
+    public void cadastrarMoradores(Morador novoMorador){
+        moradoresImovel.add(novoMorador);
+    }
 
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append("Funcionário responsável: "+ funcionarioResponsavel);
-        retorno.append("Endereço: " + endereco);
-        retorno.append("Valor do aluguel: R$ "+valorAluguel);
-        retorno.append("Moradores: "+moradoresImovel);
-        return "Imovel{}";
+        retorno.append("\nEndereço: " + endereco);
+        retorno.append("\nValor do aluguel: R$ "+valorAluguel);
+        retorno.append("\nMoradores: "+moradoresImovel);
+        return retorno.toString();
     }
 }

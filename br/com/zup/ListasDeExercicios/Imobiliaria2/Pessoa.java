@@ -36,7 +36,7 @@ public abstract class Pessoa {
     public String toString() {
         StringBuilder retorno = new StringBuilder();
         retorno.append("Nome: "+nome);
-        retorno.append("CPF: "+cpf);
+        retorno.append("\nCPF: "+cpf);
         return retorno.toString();
     }
 }
