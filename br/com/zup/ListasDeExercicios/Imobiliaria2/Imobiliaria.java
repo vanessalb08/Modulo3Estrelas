@@ -23,4 +23,13 @@ public class Imobiliaria {
     public void cadastrarImovel(Imovel novoImovel){
         imoveis.add(novoImovel);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder retorno = new StringBuilder();
+        retorno.append("------------------Imóveis-----------------");
+        retorno.append("\nExistem "+ imoveis.size()+" imóveis cadastrados");
+        retorno.append("\n\t"+imoveis);
+        return retorno.toString();
+    }
 }
