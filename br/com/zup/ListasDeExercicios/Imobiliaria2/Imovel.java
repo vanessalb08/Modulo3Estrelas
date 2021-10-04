@@ -58,7 +58,26 @@ public class Imovel {
 
     //Métodos
     public void cadastrarMoradores(Morador novoMorador){
-        moradoresImovel.add(novoMorador);
+        //novoMorador = null;
+        if (moradoresImovel.size()==0){
+            moradoresImovel.add(novoMorador);
+            System.out.println("Morador cadastrado!");
+        }
+        else{
+            String cpfSelecionado = novoMorador.getCpf();
+            for (Morador referencia : moradoresImovel){
+                if (referencia.getCpf().equals(cpfSelecionado)){
+                    System.out.println("Já existe morador cadastrado com esse CPF");
+                    break;
+                }
+                else{
+                    moradoresImovel.add(novoMorador);
+                    System.out.println("Morador cadastrado!");
+                    break;
+                }
+            }
+        }
+
     }
     //Excluir morador pelo CPF
     public Morador excluirMoradorCPF(String cpfMorador){
