@@ -19,5 +19,8 @@ public class Imobiliaria {
     public List<Imovel> getImoveis() {
         return imoveis;
     }
-
+    //Cadastrar Imóvel
+    public void cadastrarImovel(Imovel novoImovel){
+        imoveis.add(novoImovel);
+    }
 }
