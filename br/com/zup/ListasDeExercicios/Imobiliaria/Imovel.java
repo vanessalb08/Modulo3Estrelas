@@ -24,6 +24,12 @@ public class Imovel {
         this.funcionario = funcionario;
     }
 
+    public Imovel(String endereco, double valorAluguel, List<Moradores> moradoresImovel) {
+        this.endereco = endereco;
+        this.valorAluguel = valorAluguel;
+        this.moradoresImovel = moradoresImovel;
+    }
+
     //Getters e Setters
     public String getEndereco() {
         return endereco;

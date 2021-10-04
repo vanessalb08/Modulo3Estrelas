@@ -1,13 +1,18 @@
 package br.com.zup.ListasDeExercicios.Restaurante;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pratos {
     private String nomePrato;
     private double valorPrato;
-    private List<Ingredientes> ingredientes;
+    private List<Ingredientes> ingredientes = new ArrayList<>();
 
     //Contrutores
+
+
+    public Pratos() {
+    }
 
     public Pratos(String nomePrato, double valorPrato) {
         this.nomePrato = nomePrato;
