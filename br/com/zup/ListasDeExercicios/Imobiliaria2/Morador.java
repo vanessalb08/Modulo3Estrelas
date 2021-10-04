@@ -25,7 +25,7 @@ public class Morador extends Pessoa {
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
-        retorno.append(super.toString());
+        retorno.append("\n"+super.toString());
         retorno.append("\nRenda mensal: R$ "+rendaMensal);
         retorno.append("\n--------------------------");
         return retorno.toString();
