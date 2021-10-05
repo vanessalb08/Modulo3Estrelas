@@ -17,11 +17,21 @@ public class Sistema {
     }
     //Cadastrar 1 morador
     public static Morador cadastrarMorador(){
-        String nome = capturaDados("Digite o nome do morador: ").nextLine();
+        String nomeMorador = capturaDados("Digite o nome do morador: ").nextLine();
         String cpf = capturaDados("Digite o cpf do morador:").nextLine();
         double renda = capturaDados("Digite a renda mensal do morador: R$").nextDouble();
 
-        Morador morador = new Morador(nome, cpf, renda);
+        Morador morador = new Morador(nomeMorador, cpf, renda);
         return morador;
+    }
+
+    //Cadastrar Funcionario
+    public static Funcionario cadastrarFuncionario(){
+        String nomeFuncionario = capturaDados("Digite o nome do funcionário responsável: ").nextLine();
+        String cpfFuncioanario = capturaDados("Digite o CPF do funcionário responsável: ").nextLine();
+        String codigoFuncionario = capturaDados("Digite o código do funcionário: ").nextLine();
+
+        Funcionario novoFuncionario = new Funcionario(nomeFuncionario,cpfFuncioanario,codigoFuncionario);
+        return novoFuncionario;
     }
 }
