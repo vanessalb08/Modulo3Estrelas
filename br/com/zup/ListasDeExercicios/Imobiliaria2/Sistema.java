@@ -83,5 +83,28 @@ public class Sistema {
         }
         return listaImoveis;
     }
+    public static void executar(){
+        Imobiliaria novaImobilizaria =  new Imobiliaria();
+        boolean menu = true;
 
+        while(menu){
+            menu();
+            int opcao = capturaDados("Digite a opção desejada: ").nextInt();
+
+            if (opcao == 1){
+                Imovel imovel = cadastrarImovel();
+                novaImobilizaria.adicionarImovel(imovel);
+            }
+            if (opcao == 4){
+                menu = false;
+                System.out.println("Volte sempre!");
+            }
+        }
+    }
+/*
+        System.out.println("\t1 - Cadastrar novo imóvel");
+        System.out.println("\t2 - Exibir imóveis cadastrados");
+        System.out.println("\t3 - Remover morador do imóvel");
+        System.out.println("\t4 - Sair do programa");
+ */
 }

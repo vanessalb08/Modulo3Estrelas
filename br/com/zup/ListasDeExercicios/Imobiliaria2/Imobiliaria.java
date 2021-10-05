@@ -20,7 +20,7 @@ public class Imobiliaria {
         return imoveis;
     }
     //Cadastrar Imóvel
-    public void cadastrarImovel(Imovel novoImovel){
+    public void adicionarImovel(Imovel novoImovel){
         imoveis.add(novoImovel);
     }
 

@@ -2,7 +2,7 @@ package br.com.zup.ListasDeExercicios.Imobiliaria2;
 
 public class Main {
     public static void main(String[] args) {
-        Sistema.cadastrarImovel();
+        Sistema.executar();
 
        /* Funcionario func1 = new Funcionario("Andre","0314083","312-b");
         Funcionario func2 = new Funcionario("Vinicius","31431414","123-c");
