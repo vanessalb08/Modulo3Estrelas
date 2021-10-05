@@ -81,6 +81,7 @@ public class Sistema {
                 System.out.println("Opção inválida!");
             }
         }
+        return listaImoveis;
     }
 
 }
