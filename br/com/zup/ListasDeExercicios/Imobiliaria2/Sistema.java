@@ -15,5 +15,13 @@ public class Sistema {
         System.out.println("\t3 - Remover morador do imóvel");
         System.out.println("\t4 - Sair do programa");
     }
+    //Cadastrar 1 morador
+    public static Morador cadastrarMorador(){
+        String nome = capturaDados("Digite o nome do morador: ").nextLine();
+        String cpf = capturaDados("Digite o cpf do morador:").nextLine();
+        double renda = capturaDados("Digite a renda mensal do morador: R$").nextDouble();
 
+        Morador morador = new Morador(nome, cpf, renda);
+        return morador;
+    }
 }
