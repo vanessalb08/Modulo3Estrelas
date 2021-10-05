@@ -28,10 +28,18 @@ public class Sistema {
     //Cadastrar Funcionario
     public static Funcionario cadastrarFuncionario(){
         String nomeFuncionario = capturaDados("Digite o nome do funcionário responsável: ").nextLine();
-        String cpfFuncioanario = capturaDados("Digite o CPF do funcionário responsável: ").nextLine();
+        String cpfFuncionario = capturaDados("Digite o CPF do funcionário responsável: ").nextLine();
         String codigoFuncionario = capturaDados("Digite o código do funcionário: ").nextLine();
 
-        Funcionario novoFuncionario = new Funcionario(nomeFuncionario,cpfFuncioanario,codigoFuncionario);
+        Funcionario novoFuncionario = new Funcionario(nomeFuncionario,cpfFuncionario,codigoFuncionario);
         return novoFuncionario;
+    }
+    //Cadastrar 1 imóvel
+    public static Imovel cadastrarImovel(){
+        String endereco = capturaDados("Digite o endereço do imóvel: ").nextLine();
+        double valorAluguel = capturaDados("Qual o valor do aluguel? R$").nextDouble();
+
+        Imovel novoImovel = new Imovel(cadastrarFuncionario(),endereco,valorAluguel);
+        return novoImovel;
     }
 }
