@@ -7,4 +7,13 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+    public static void menu(){
+        System.out.println("Bem vinde a Imobiliária Sua Casa!");
+        System.out.println("O que deseja fazer?");
+        System.out.println("\t1 - Cadastrar novo imóvel");
+        System.out.println("\t2 - Exibir imóveis cadastrados");
+        System.out.println("\t3 - Remover morador do imóvel");
+        System.out.println("\t4 - Sair do programa");
+    }
+
 }
