@@ -2,8 +2,9 @@ package br.com.zup.ListasDeExercicios.Imobiliaria2;
 
 public class Main {
     public static void main(String[] args) {
+        Sistema.cadastrarImovel();
 
-        Funcionario func1 = new Funcionario("Andre","0314083","312-b");
+       /* Funcionario func1 = new Funcionario("Andre","0314083","312-b");
         Funcionario func2 = new Funcionario("Vinicius","31431414","123-c");
 
         Morador morador1 = new Morador("Vanessa","02349423432",1500);
@@ -34,7 +35,7 @@ public class Main {
         System.out.println("==================================================================");
         imovel1.excluirMoradorCPF("08345676");
         System.out.println(imobiliaria);
-
+*/
 
     }
 }

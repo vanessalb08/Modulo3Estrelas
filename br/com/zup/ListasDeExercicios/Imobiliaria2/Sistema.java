@@ -45,6 +45,7 @@ public class Sistema {
         Imovel novoImovel = new Imovel(cadastrarFuncionario(),endereco,valorAluguel,cadastrarVariosMoradores());
         return novoImovel;
     }
+    //Cadastrar vários moradores
     public static List cadastrarVariosMoradores(){
         List<Morador> listaMoradores = new ArrayList<>();
         boolean continuar = true;
@@ -54,7 +55,7 @@ public class Sistema {
             if (opcao.equals("SIM")){
                 System.out.println("Insira o novo morador: ");
             }
-            else if (opcao.equals("NÃO")){
+            else if (opcao.equals("NÃO") | opcao.equals("NAO")){
                 continuar = false;
             }
             else{
@@ -63,4 +64,23 @@ public class Sistema {
         }
         return listaMoradores;
     }
+    //Cadastrar vários imóveis
+    public static List cadastrarVariosImoveis(){
+        List<Imovel> listaImoveis = new ArrayList<>();
+        boolean continuar = true;
+        while (continuar){
+            listaImoveis.add(cadastrarImovel());
+            String opcao = capturaDados("Deseja inserir outro imóvel? Sim/Não").nextLine().toUpperCase();
+            if (opcao.equals("SIM")){
+                System.out.println("Insira o novo imóvel: ");
+            }
+            else if (opcao.equals("NÃO") | opcao.equals("NAO")){
+                continuar = false;
+            }
+            else{
+                System.out.println("Opção inválida!");
+            }
+        }
+    }
+
 }
