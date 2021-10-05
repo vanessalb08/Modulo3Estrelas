@@ -1,5 +1,8 @@
 package br.com.zup.ListasDeExercicios.Imobiliaria2;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Sistema {
@@ -39,7 +42,25 @@ public class Sistema {
         String endereco = capturaDados("Digite o endereço do imóvel: ").nextLine();
         double valorAluguel = capturaDados("Qual o valor do aluguel? R$").nextDouble();
 
-        Imovel novoImovel = new Imovel(cadastrarFuncionario(),endereco,valorAluguel);
+        Imovel novoImovel = new Imovel(cadastrarFuncionario(),endereco,valorAluguel,cadastrarVariosMoradores());
         return novoImovel;
+    }
+    public static List cadastrarVariosMoradores(){
+        List<Morador> listaMoradores = new ArrayList<>();
+        boolean continuar = true;
+        while (continuar){
+            listaMoradores.add(cadastrarMorador());
+            String opcao = capturaDados("Deseja inserir outro morador? Sim/Não").nextLine().toUpperCase();
+            if (opcao.equals("SIM")){
+                System.out.println("Insira o novo morador: ");
+            }
+            else if (opcao.equals("NÃO")){
+                continuar = false;
+            }
+            else{
+                System.out.println("Opção inválida!");
+            }
+        }
+        return listaMoradores;
     }
 }
