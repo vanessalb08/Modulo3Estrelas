@@ -36,14 +36,36 @@ public class Sistema {
         return false;
     }
 
+    //Validar email repedito
+    public static boolean validarEmailExistente(Imobiliaria imobiliaria, Morador morador) {
+        String pegarEmail = morador.getEmailMorador();
+        for (Imovel indiceImovel : imobiliaria.getImoveis()){
+            for (Morador indiceMorador : indiceImovel.getMoradoresImovel()){
+                if (indiceMorador.getEmailMorador().equals(pegarEmail)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    //Validar email sem @
+    public static boolean validarEmailCompleto(Imobiliaria imobiliaria, Morador morador) {
+        String pegarEmail = morador.getEmailMorador();
+        if (pegarEmail.contains("@")){
+            return true;
+        }
+        return false;
+    }
+
     //Cadastrar 1 morador
     public static Morador cadastrarMorador() {
 
         String nomeMorador = capturaDados("Digite o nome do morador: ").nextLine();
         String cpfMorador = capturaDados("Digite o cpf do morador:").nextLine();
         double renda = capturaDados("Digite a renda mensal do morador: R$").nextDouble();
+        String emailMorador = capturaDados("Digite o email do morador: ").nextLine();
 
-        Morador morador = new Morador(nomeMorador,cpfMorador,renda);
+        Morador morador = new Morador(nomeMorador,cpfMorador,renda,emailMorador);
 
         return morador;
     }
@@ -71,10 +93,20 @@ public class Sistema {
         while (contadorDeMoradores < qtdMoradores){
             Morador morador = cadastrarMorador();
             boolean cpfExistente = validarCpfExistente(imobiliaria, morador);
+            boolean emailRepetido = validarEmailExistente(imobiliaria,morador);
+            boolean emailCorreto = validarEmailCompleto(imobiliaria,morador);
 
-            if (cpfExistente == true) {
+            if (!emailCorreto){
+                System.out.println("Email inválido!");
+            }
+            if (cpfExistente) {
                 System.out.println("CPF já cadastrado no sistema");
-            }else{
+            }
+            if (emailRepetido){
+                System.out.println("Email já cadastrado!");
+            }
+
+            else{
                 novoImovel.cadastrarMoradores(morador);
                 contadorDeMoradores ++;
             }
@@ -100,24 +132,6 @@ public class Sistema {
         return novoImovel;
     }
 
-    //Cadastrar vários imóveis
-    public static List<Imovel> cadastrarVariosImoveis() {
-        List<Imovel> listaImoveis = new ArrayList<>();
-        boolean continuar = true;
-        while (continuar) {
-            listaImoveis.add(cadastrarImovel());
-            String opcao = capturaDados("Deseja inserir outro imóvel? Sim/Não").nextLine().toUpperCase();
-            if (opcao.equals("SIM")) {
-                System.out.println("Insira o novo imóvel: ");
-            } else if (opcao.equals("NÃO") | opcao.equals("NAO")) {
-                continuar = false;
-            } else {
-                System.out.println("Opção inválida!");
-            }
-        }
-        return listaImoveis;
-    }
-
     public static void executar() {
         Imobiliaria novaImobiliaria = new Imobiliaria();
         boolean menu = true;
@@ -141,7 +155,6 @@ public class Sistema {
                         System.out.println("Opção inválida!");
                     }
                 }
-
 
             }
             if (opcao == 2) {
