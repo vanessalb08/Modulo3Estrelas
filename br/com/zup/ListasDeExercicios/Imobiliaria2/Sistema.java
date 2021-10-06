@@ -174,10 +174,4 @@ public class Sistema {
             }
         }
     }
-/*
-        System.out.println("\t1 - Cadastrar novo imóvel");
-        System.out.println("\t2 - Exibir imóveis cadastrados");
-        System.out.println("\t3 - Remover morador do imóvel");
-        System.out.println("\t4 - Sair do programa");
- */
 }
