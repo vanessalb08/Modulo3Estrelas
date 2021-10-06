@@ -95,15 +95,19 @@ public class Sistema {
             boolean cpfExistente = validarCpfExistente(imobiliaria, morador);
             boolean emailRepetido = validarEmailExistente(imobiliaria,morador);
             boolean emailCorreto = validarEmailCompleto(imobiliaria,morador);
+          //  boolean condicao = true;
 
-            if (!emailCorreto){
-                System.out.println("Email inválido!");
-            }
-            if (cpfExistente) {
-                System.out.println("CPF já cadastrado no sistema");
-            }
-            if (emailRepetido){
-                System.out.println("Email já cadastrado!");
+            if (!emailCorreto | cpfExistente | emailRepetido){
+
+                if (!emailCorreto){
+                    System.out.println("Email inválido!");
+                }
+                if (cpfExistente) {
+                    System.out.println("CPF já cadastrado no sistema");
+                }
+                if (emailRepetido){
+                    System.out.println("Email já cadastrado!");
+                }
             }
 
             else{
