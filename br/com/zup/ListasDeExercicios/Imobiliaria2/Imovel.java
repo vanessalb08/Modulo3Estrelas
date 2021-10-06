@@ -20,12 +20,6 @@ public class Imovel {
         this.valorAluguel = valorAluguel;
     }
 
-    public Imovel(Funcionario funcionarioResponsavel, String endereco, double valorAluguel, List<Morador> moradoresImovel) {
-        this.funcionarioResponsavel = funcionarioResponsavel;
-        this.endereco = endereco;
-        this.valorAluguel = valorAluguel;
-        this.moradoresImovel = moradoresImovel;
-    }
     //Getters e Setters
 
     public double getValorAluguel() {
@@ -58,26 +52,7 @@ public class Imovel {
 
     //Métodos
     public void cadastrarMoradores(Morador novoMorador){
-        //novoMorador = null;
-        if (moradoresImovel.size()==0){
-            moradoresImovel.add(novoMorador);
-            System.out.println("Morador cadastrado!");
-        }
-        else{
-            String cpfSelecionado = novoMorador.getCpf();
-            for (Morador referencia : moradoresImovel){
-                if (referencia.getCpf().equals(cpfSelecionado)){
-                    System.out.println("Já existe morador cadastrado com esse CPF");
-                    break;
-                }
-                else{
-                    moradoresImovel.add(novoMorador);
-                    System.out.println("Morador cadastrado!");
-                    break;
-                }
-            }
-        }
-
+        moradoresImovel.add(novoMorador);
     }
     //Excluir morador pelo CPF
     public Morador excluirMoradorCPF(String cpfMorador){
