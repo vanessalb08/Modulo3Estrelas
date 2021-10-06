@@ -127,9 +127,22 @@ public class Sistema {
             int opcao = capturaDados("Digite a opção desejada: ").nextInt();
 
             if (opcao == 1) {
-                Imovel imovel = cadastrarImovel();
-                novaImobiliaria.adicionarImovel(imovel);
-                cadastrarVariosMoradores(novaImobiliaria,imovel);
+                boolean continuar = true;
+                while (continuar) {
+                    Imovel imovel = cadastrarImovel();
+                    novaImobiliaria.adicionarImovel(imovel);
+                    cadastrarVariosMoradores(novaImobiliaria,imovel);
+                    String inserirMais = capturaDados("Deseja inserir outro imóvel? Sim/Não").nextLine().toUpperCase();
+                    if (inserirMais.equals("SIM")) {
+                        System.out.println("Insira o novo imóvel: ");
+                    } else if (inserirMais.equals("NÃO") | inserirMais.equals("NAO")) {
+                        continuar = false;
+                    } else {
+                        System.out.println("Opção inválida!");
+                    }
+                }
+
+
             }
             if (opcao == 2) {
                 System.out.println(novaImobiliaria);

@@ -54,23 +54,6 @@ public class Imovel {
     public void cadastrarMoradores(Morador novoMorador){
         moradoresImovel.add(novoMorador);
     }
-    //Excluir morador pelo CPF
-    public Morador excluirMoradorCPF(String cpfMorador){
-        Morador moradorExcluido = null;
-        for (Morador refencia: moradoresImovel){
-            if (refencia.getCpf().equals(cpfMorador)) {
-                moradorExcluido = refencia;
-            }
-        }
-        if (moradorExcluido != null){
-            moradoresImovel.remove(moradorExcluido);
-        }
-        else{
-            System.out.println("Não existe morador cadastrado com esse CPF");
-        }
-        return moradorExcluido;
-    }
-
 
     @Override
     public String toString() {

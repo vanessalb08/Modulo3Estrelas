@@ -24,16 +24,6 @@ public class Imobiliaria {
         imoveis.add(novoImovel);
     }
 
-    //Ecluir morador pelo imovel
-    public Imovel selecionarImovel(String endereco){
-        Imovel imovelSelecionado = null;
-        for (Imovel referencia : imoveis){
-            if (referencia.getEndereco().equals(endereco)){
-                imovelSelecionado = referencia;
-            }
-        }
-        return imovelSelecionado;
-    }
     @Override
     public String toString() {
         StringBuilder retorno = new StringBuilder();
