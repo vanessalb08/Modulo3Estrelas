@@ -25,4 +25,12 @@ public class ServicoConsumidor {
         }
         throw new Exception("Não existe cadastro com esse e-mail");
     }
+
+    //Verificar se email é válido
+    public static void verificarEmailValido(String email) throws Exception{
+        if (!email.contains("@")){
+            throw new Exception("Email inválido!");
+        }
+    }
+
 }

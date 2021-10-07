@@ -9,15 +9,19 @@ public class Sistema {
         return new Scanner(System.in);
     }
     //Cadastrar consumidor
-    public static Consumidor cadastrarConsumidor(){
+    public static Consumidor cadastrarConsumidor() throws Exception{
         String nome = receberDados("Qual o nome do consumidor? ").nextLine();
         String email = receberDados("Qual o email do consumidor?").nextLine();
+
+        ServicoConsumidor.verificarEmailValido(email);
+
         //Retornar o método de cadastrar consumidor da classe ServicoConsumidor com os dados recebidos
         return ServicoConsumidor.cadastrarConsumidor(nome,email);
     }
     //Cadastrar Fatura
     public static Fatura cadastrarFatura()throws Exception{
         String emailConsumidor = receberDados("Qual o e-mail cadastrado do consumidor?").nextLine();
+        ServicoConsumidor.verificarEmailValido(emailConsumidor);
         double valorDaFatura = receberDados("Qual o valor da fatura? R$ ").nextDouble();
         String dataVencimento = receberDados("Qual a data de vencimento? ").nextLine();
 

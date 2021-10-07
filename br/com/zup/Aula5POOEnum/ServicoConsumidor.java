@@ -10,7 +10,7 @@ public class ServicoConsumidor {
     private static List<Consumidor> consumidores = new ArrayList<>();
 
     //Validar o email (se tem @)
-
+    //para verificar basta colocar a exceção caso a condição ocorra. Se a condição não ocorrer ele continua o programa normalmente
     public static void validarEmail(String email) throws Exception{
         if (!email.contains("@")){
             throw new Exception("E-mail inválido!");
@@ -45,4 +45,6 @@ public class ServicoConsumidor {
         //Cria a exceção que vai dar
         throw new Exception("Consumidor não cadastrado no Sistema");
     }
+
+
 }
