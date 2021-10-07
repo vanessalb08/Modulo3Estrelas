@@ -37,7 +37,6 @@ public class Sistema {
 
     public static List<Fatura> pesquisarFatura() throws Exception{
         String email = capturarDados("Digite o email do consumidor").nextLine();
-        ServicoConsumidor.verificarEmailExiste(email);
         ServicoConsumidor.validarEmail(email);
         //Receber Lista do serviço fatura e retorná-la
         List<Fatura> faturasDoUsuario = ServicoFatura.pesquisarFaturaPeloEmail(email);
@@ -46,7 +45,7 @@ public class Sistema {
 
     //Criar menu
 
-    public static void executar() throws Exception{
+    public static boolean executar() throws Exception{
         boolean continuar = true;
         while(continuar){
             menu();
@@ -77,5 +76,7 @@ public class Sistema {
                 System.out.println("Opção inválida");
             }
         }
+        //Sempre vai retornar verdade até que o usuário decida que quer sair e digite opção 4
+        return continuar;
     }
 }

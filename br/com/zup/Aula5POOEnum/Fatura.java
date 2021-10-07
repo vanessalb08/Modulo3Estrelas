@@ -9,6 +9,7 @@ public class Fatura {
     }
 
     public Fatura(Consumidor consumidor, double valor, String dataDeVencimento) {
+        this.consumidor = consumidor;
         this.valor = valor;
         this.dataDeVencimento = dataDeVencimento;
     }
@@ -39,6 +40,6 @@ public class Fatura {
         retorno.append("Consumidor:"+ consumidor);
         retorno.append("\nValor: R$ "+ valor);
         retorno.append("\nData de vencimento: "+ dataDeVencimento);
-        return "Consumidor{}";
+        return retorno.toString();
     }
 }
