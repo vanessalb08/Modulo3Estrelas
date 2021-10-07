@@ -1,5 +1,6 @@
 package br.com.zup.ListasDeExercicios.Fatura;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -25,5 +26,11 @@ public class Sistema {
         String dataVencimento = receberDados("Qual a data de vencimento? ").nextLine();
 
         return ServicoFatura.cadastrarFatura(emailConsumidor,valorDaFatura,dataVencimento);
+    }
+    public static List<Fatura> pesquisarFaturaConsumidor() throws Exception{
+        String email = receberDados("Qual o email do consumidor que deseja pesquisa?").nextLine();
+        ServicoConsumidor.verificarEmailValido(email);
+        List<Fatura> faturasConsumidor = ServicoFatura.pesquisarFaturaConsumidor(email);
+        return faturasConsumidor;
     }
 }

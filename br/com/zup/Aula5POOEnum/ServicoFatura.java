@@ -22,8 +22,10 @@ public class ServicoFatura {
     //Pesquisar a lista de faturas de um consumidor e adicionar a uma lista de faturas
     public static List<Fatura> pesquisarFaturaPeloEmail (String email){
         List<Fatura> faturasDoUsuario = new ArrayList<>();
+        //Pesquisar na lista de faturas...
         for (Fatura faturaReferencia : faturas){
-            //Se o email desse consumidor dessa fatura for igual ao pesquisado
+            //...Se o email pesquisado é igual a algum cadastrado. Pra cada email que seja cadastrado ele adiciona na
+            //lista de faturas daquele usuário
             if (faturaReferencia.getConsumidor().getEmail().equals(email)){
                 faturasDoUsuario.add(faturaReferencia);
             }

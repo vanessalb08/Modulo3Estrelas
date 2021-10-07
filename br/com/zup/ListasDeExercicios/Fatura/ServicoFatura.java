@@ -15,4 +15,13 @@ public class ServicoFatura {
         return fatura;
     }
     //PesquisarFatura
+    public static List<Fatura> pesquisarFaturaConsumidor(String email){
+        List<Fatura> faturasConsumidor = new ArrayList<>();
+        for (Fatura faturaReferencia : faturas){
+            if (faturaReferencia.getConsumidor().getEmail().equals(email)){
+                faturasConsumidor.add(faturaReferencia);
+            }
+        }
+        return faturasConsumidor;
+    }
 }
