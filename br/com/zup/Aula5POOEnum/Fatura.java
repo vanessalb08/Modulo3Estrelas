@@ -1,5 +1,5 @@
 package br.com.zup.Aula5POOEnum;
-
+//Função APENAS de ser molde para os objetos dessa classe
 public class Fatura {
     private Consumidor consumidor;
     private double valor;
@@ -8,7 +8,7 @@ public class Fatura {
     public Fatura() {
     }
 
-    public Fatura(double valor, String dataDeVencimento) {
+    public Fatura(Consumidor consumidor, double valor, String dataDeVencimento) {
         this.valor = valor;
         this.dataDeVencimento = dataDeVencimento;
     }
@@ -19,6 +19,10 @@ public class Fatura {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public Consumidor getConsumidor() {
+        return consumidor;
     }
 
     public String getDataDeVencimento() {

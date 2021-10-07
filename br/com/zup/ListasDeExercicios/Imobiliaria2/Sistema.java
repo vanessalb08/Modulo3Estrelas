@@ -36,7 +36,7 @@ public class Sistema {
         return false;
     }
 
-    //Validar email repedito
+    //Proibir incluir se o email for repetido
     public static boolean validarEmailExistente(Imobiliaria imobiliaria, Morador morador) {
         String pegarEmail = morador.getEmailMorador();
         for (Imovel indiceImovel : imobiliaria.getImoveis()) {
@@ -49,7 +49,7 @@ public class Sistema {
         return false;
     }
 
-    //Validar email sem @
+    //Ver se email é válido(com @)
     public static boolean validarEmailCompleto(Imobiliaria imobiliaria, Morador morador) {
         String pegarEmail = morador.getEmailMorador();
         if (pegarEmail.contains("@")) {

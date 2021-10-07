@@ -1,5 +1,5 @@
 package br.com.zup.Aula5POOEnum;
-
+//Função APENAS de ser molde para os objetos dessa classe
 public class Consumidor {
     private String nomeConsumidor;
     private String email;
