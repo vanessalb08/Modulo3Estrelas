@@ -27,10 +27,14 @@ public class ServicoConsumidor {
     //Cadastrar consumidor na lista. O retorno é para poder usar o metodo depois (reaproveitamento)
     //Vai pegar os dados do sistema, colocar nos parâmetros e adicionar esse consumidor na lista
     public static Consumidor cadastrarConsumidor(String nome, String email) throws Exception{
+        //Verificação de e-mails
         validarEmail(email);
         verificarEmailExiste(email);
+        //Criando um novo consumidor recebendo os parâmetros que serão inseridos na classe sistema
         Consumidor consumidor = new Consumidor(nome, email);
+        //Adicionando o consumidor criado a minha lista de consumidores cadastrados
         consumidores.add(consumidor);
+        //retornando consumidor para cadastrar no sistema
         return consumidor;
     }
 

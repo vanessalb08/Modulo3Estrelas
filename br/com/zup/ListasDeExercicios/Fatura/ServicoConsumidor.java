@@ -8,12 +8,11 @@ public class ServicoConsumidor {
     //Lista para armazenar todos os consumidores que eu cadastrar
     private static List<Consumidor> consumidores = new ArrayList<>();
     //Criar consumidor
-    public static Consumidor cadastrarConsumidor(String nome, String email){
-        //Criando um novo consumidor recebendo os parâmetros que serão inseridos na classe sistema
+    public static Consumidor cadastrarConsumidor(String nome, String email) throws Exception{
+        verificarEmailValido(email);
+        verificarEmailRepetido(email);
         Consumidor consumidor = new Consumidor(nome, email);
-        //Adicionando o consumidor criado a minha lista de consumidores cadastrados
         consumidores.add(consumidor);
-        //retornando consumidor para cadastrar no sistema
         return consumidor;
     }
     //Verificar se existe o consumidor através do email
@@ -32,5 +31,11 @@ public class ServicoConsumidor {
             throw new Exception("Email inválido!");
         }
     }
-
+    public static void verificarEmailRepetido(String email) throws Exception{
+        for (Consumidor consumidorReferencia : consumidores){
+            if (consumidorReferencia.getEmail().equals(email)){
+                throw new Exception("E-mail já cadastrado!");
+            }
+        }
+    }
 }

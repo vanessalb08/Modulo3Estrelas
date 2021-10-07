@@ -21,7 +21,6 @@ public class Sistema {
     //Cadastrar Fatura
     public static Fatura cadastrarFatura()throws Exception{
         String emailConsumidor = receberDados("Qual o e-mail cadastrado do consumidor?").nextLine();
-        ServicoConsumidor.verificarEmailValido(emailConsumidor);
         double valorDaFatura = receberDados("Qual o valor da fatura? R$ ").nextDouble();
         String dataVencimento = receberDados("Qual a data de vencimento? ").nextLine();
 
