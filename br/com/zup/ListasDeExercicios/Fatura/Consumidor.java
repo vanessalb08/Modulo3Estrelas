@@ -3,13 +3,15 @@ package br.com.zup.ListasDeExercicios.Fatura;
 public class Consumidor {
     private String nomeConsumidor;
     private String email;
+    private TipoPessoa tipoPessoa;
 
     public Consumidor() {
     }
 
-    public Consumidor(String nome, String email) {
-        this.nomeConsumidor = nome;
+    public Consumidor(String nomeConsumidor, String email, TipoPessoa tipoPessoa) {
+        this.nomeConsumidor = nomeConsumidor;
         this.email = email;
+        this.tipoPessoa = tipoPessoa;
     }
 
     public String getNomeConsumidor() {
@@ -26,6 +28,14 @@ public class Consumidor {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public TipoPessoa getTipoPessoa() {
+        return tipoPessoa;
+    }
+
+    public void setTipoPessoa(TipoPessoa tipoPessoa) {
+        this.tipoPessoa = tipoPessoa;
     }
 
     @Override

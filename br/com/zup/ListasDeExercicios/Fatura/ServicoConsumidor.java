@@ -8,10 +8,10 @@ public class ServicoConsumidor {
     //Lista para armazenar todos os consumidores que eu cadastrar
     private static List<Consumidor> consumidores = new ArrayList<>();
     //Criar consumidor
-    public static Consumidor cadastrarConsumidor(String nome, String email) throws Exception{
+    public static Consumidor cadastrarConsumidor(String nome, String email, TipoPessoa tipoPessoa) throws Exception{
         verificarEmailValido(email);
         verificarEmailRepetido(email);
-        Consumidor consumidor = new Consumidor(nome, email);
+        Consumidor consumidor = new Consumidor(nome, email,tipoPessoa);
         consumidores.add(consumidor);
         return consumidor;
     }
@@ -37,5 +37,22 @@ public class ServicoConsumidor {
                 throw new Exception("E-mail já cadastrado!");
             }
         }
+    }
+    public static List<TipoPessoa> mostrarTipoPessoa (){
+        List<TipoPessoa> tipoPessoas = new ArrayList<>();
+
+        for (TipoPessoa tipoPessoaReferencia : TipoPessoa.values()){
+            tipoPessoas.add(tipoPessoaReferencia);
+        }
+        return tipoPessoas;
+    }
+    public static TipoPessoa validarTipoPessoa(String tipo) throws Exception{
+        for (TipoPessoa tipoPessoaReferencia : TipoPessoa.values()){
+            String ignorarEspaco = tipo.replaceAll("\\s+","");
+            if (tipo.equalsIgnoreCase(String.valueOf(tipoPessoaReferencia))){
+                return tipoPessoaReferencia;
+            }
+        }
+        throw new Exception("Tipo inválido");
     }
 }

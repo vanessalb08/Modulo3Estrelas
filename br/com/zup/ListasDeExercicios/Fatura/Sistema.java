@@ -16,15 +16,19 @@ public class Sistema {
         System.out.println("[3] - Pesquisar faturas do consumidor");
         System.out.println("[4] - Sair do programa");
     }
+
     //Cadastrar consumidor
     public static Consumidor cadastrarConsumidor() throws Exception{
         String nome = receberDados("Qual o nome do consumidor? ").nextLine();
         String email = receberDados("Qual o email do consumidor?").nextLine();
+        ServicoConsumidor.mostrarTipoPessoa();
+        String tipo = receberDados("Qual o tipo da pessoa?").nextLine();
+        TipoPessoa tipoPessoa = ServicoConsumidor.validarTipoPessoa(tipo);
 
         ServicoConsumidor.verificarEmailValido(email);
 
         //Retornar o método de cadastrar consumidor da classe ServicoConsumidor com os dados recebidos
-        return ServicoConsumidor.cadastrarConsumidor(nome,email);
+        return ServicoConsumidor.cadastrarConsumidor(nome,email,tipoPessoa);
     }
     //Cadastrar Fatura
     public static Fatura cadastrarFatura()throws Exception{
@@ -34,6 +38,7 @@ public class Sistema {
 
         return ServicoFatura.cadastrarFatura(emailConsumidor,valorDaFatura,dataVencimento);
     }
+    //Pesquisar fatura por consumidor
     public static List<Fatura> pesquisarFaturaConsumidor() throws Exception{
         String email = receberDados("Qual o email do consumidor que deseja pesquisa?").nextLine();
         ServicoConsumidor.verificarEmailValido(email);
