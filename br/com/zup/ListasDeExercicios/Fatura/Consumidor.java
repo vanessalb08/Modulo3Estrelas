@@ -43,6 +43,7 @@ public class Consumidor {
         StringBuilder exibirDados = new StringBuilder();
         exibirDados.append("\nNome: "+ nomeConsumidor);
         exibirDados.append("\nE-mail: "+email);
+        exibirDados.append("\nPessoa tipo: "+ tipoPessoa);
         return exibirDados.toString();
     }
 }

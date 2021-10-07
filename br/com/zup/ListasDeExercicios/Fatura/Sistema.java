@@ -21,7 +21,7 @@ public class Sistema {
     public static Consumidor cadastrarConsumidor() throws Exception{
         String nome = receberDados("Qual o nome do consumidor? ").nextLine();
         String email = receberDados("Qual o email do consumidor?").nextLine();
-        ServicoConsumidor.mostrarTipoPessoa();
+        System.out.println(ServicoConsumidor.mostrarTipoPessoa());
         String tipo = receberDados("Qual o tipo da pessoa?").nextLine();
         TipoPessoa tipoPessoa = ServicoConsumidor.validarTipoPessoa(tipo);
 

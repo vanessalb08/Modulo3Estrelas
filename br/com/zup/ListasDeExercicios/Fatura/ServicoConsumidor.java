@@ -49,7 +49,7 @@ public class ServicoConsumidor {
     public static TipoPessoa validarTipoPessoa(String tipo) throws Exception{
         for (TipoPessoa tipoPessoaReferencia : TipoPessoa.values()){
             String ignorarEspaco = tipo.replaceAll("\\s+","");
-            if (tipo.equalsIgnoreCase(String.valueOf(tipoPessoaReferencia))){
+            if (ignorarEspaco.equalsIgnoreCase(String.valueOf(tipoPessoaReferencia))){
                 return tipoPessoaReferencia;
             }
         }
