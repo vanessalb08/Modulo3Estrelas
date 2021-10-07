@@ -16,4 +16,13 @@ public class ServicoConsumidor {
         //retornando consumidor para cadastrar no sistema
         return consumidor;
     }
+    //Verificar se existe o consumidor através do email
+    public static Consumidor pesquisarConsumidorExistente(String email) throws Exception{
+        for (Consumidor consumidorReferencia : consumidores){
+            if (consumidorReferencia.getEmail().equals(email)){
+                return consumidorReferencia;
+            }
+        }
+        throw new Exception("Não existe cadastro com esse e-mail");
+    }
 }
