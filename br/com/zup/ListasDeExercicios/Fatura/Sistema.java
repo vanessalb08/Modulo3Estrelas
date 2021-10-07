@@ -9,6 +9,13 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+    public static void menu(){
+        System.out.println("========Menu de opções=======");
+        System.out.println("[1] - Cadastrar Consumidor");
+        System.out.println("[2] - Cadastrar fatura");
+        System.out.println("[3] - Pesquisar faturas do consumidor");
+        System.out.println("[4] - Sair do programa");
+    }
     //Cadastrar consumidor
     public static Consumidor cadastrarConsumidor() throws Exception{
         String nome = receberDados("Qual o nome do consumidor? ").nextLine();
