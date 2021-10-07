@@ -40,4 +40,34 @@ public class Sistema {
         List<Fatura> faturasConsumidor = ServicoFatura.pesquisarFaturaConsumidor(email);
         return faturasConsumidor;
     }
+
+    public static boolean executar() throws Exception{
+        boolean continuarMenu = true;
+        while (continuarMenu){
+            menu();
+            int opção = receberDados("Digite a opção desejada: ").nextInt();
+
+            if (opção == 1){
+                Consumidor consumidor = cadastrarConsumidor();
+                System.out.println(consumidor);
+            }
+            else if (opção == 2){
+                Fatura fatura = cadastrarFatura();
+                System.out.println(fatura);
+            }
+            else if (opção == 3){
+                List<Fatura> listaFaturas = pesquisarFaturaConsumidor();
+                System.out.println("Quantidade de faturas:" + listaFaturas.size());
+                System.out.println(listaFaturas);
+            }
+            else if( opção == 4){
+                continuarMenu = false;
+                System.out.println("Volte sempre!");
+            }
+            else{
+                System.out.println("Digite uma opção válida!");
+            }
+        }
+        return continuarMenu;
+    }
 }

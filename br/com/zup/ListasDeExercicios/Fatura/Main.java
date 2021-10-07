@@ -1,10 +1,15 @@
 package br.com.zup.ListasDeExercicios.Fatura;
 
 public class Main {
-    public static void main(String[] args) throws Exception{
-        Sistema.cadastrarConsumidor();
-        Sistema.cadastrarConsumidor();
-        Sistema.cadastrarFatura();
+    public static void main(String[] args){
+        boolean continuarExecutar = true;
+        while (continuarExecutar){
+            try {
+                continuarExecutar = Sistema.executar();
+            }catch (Exception erro){
+                System.out.println(erro.getMessage());
+            }
+        }
     }
 }
 /*

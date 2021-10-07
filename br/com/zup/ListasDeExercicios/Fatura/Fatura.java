@@ -44,7 +44,7 @@ public class Fatura {
         StringBuilder exibirDados = new StringBuilder();
         exibirDados.append("\nConsumidor: "+consumidor);
         exibirDados.append("\nValor da Fatura: R$" + valorASerPago);
-        exibirDados.append("Data de vencimento: " + dataVencimento);
+        exibirDados.append("\nData de vencimento: " + dataVencimento);
         return exibirDados.toString();
     }
 }
