@@ -96,6 +96,9 @@ public class Sistema {
                 continuarMenu = false;
                 System.out.println("Obrigada por usar nossos serviços. Até Mais!");
             }
+            else{
+                System.out.println("Opção inválida! Por favor digite novamente!");
+            }
         }
 
         return continuarMenu;
