@@ -30,10 +30,11 @@ public class Sistema {
         return cliente;
     }
     //Cadastrar Vendedor
-    public static Vendedor cadastrarVendedor() {
+    public static Vendedor cadastrarVendedor()throws Exception {
         String nomeVendedor = receberDados("Digite o nome do vendedor responsável: ").nextLine();
         String cpfVendedor = receberDados("Digite o CPF do vendedor responsável: ").nextLine();
         String emailVendedor = receberDados("Digite o e-mail do vendedor responsável: ").nextLine();
+        ServicoVendedor.verificarEmailValidoVendedor(emailVendedor);
         String ctps = receberDados("Digite a ctps do vendedor resposável: ").nextLine();
 
         Vendedor vendedor = ServicoVendedor.cadastrarVendedores(nomeVendedor, cpfVendedor, emailVendedor, ctps);

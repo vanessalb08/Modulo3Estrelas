@@ -12,6 +12,12 @@ public class ServicoVendedor {
         vendedores.add(novoVendedor);
         return novoVendedor;
     }
+    //Verificar email válido
+    public static void verificarEmailValidoVendedor(String emailVendedor) throws Exception{
+        if (!emailVendedor.contains("@")){
+            throw new Exception("E-mail inválido! Por favor digite um email válido.");
+        }
+    }
     //Pesquisar vendedor pelo cpf
     public static Vendedor pesquisarVendedorPorCpf(String cpf) throws Exception{
         for (Vendedor vendedorReferencia : vendedores){
