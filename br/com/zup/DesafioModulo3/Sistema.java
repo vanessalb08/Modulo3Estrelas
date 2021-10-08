@@ -52,8 +52,13 @@ public class Sistema {
         Venda novaVenda = ServicoVenda.cadastrarVenda(cpfCliente,cpfVendedor,valorPago,dataRegistro);
         return novaVenda;
     }
+    //Exibir Vendas Cadastradas
     public static void exibirVendas(){
         ServicoVenda.exibirVendas();
+    }
+    //Exibir vendedores cadastrados
+    public static void exibirVendedoresCadastrados(){
+        ServicoVendedor.exibirVendedoresCadastrados();
     }
 
     public static boolean executar () throws Exception{
@@ -79,6 +84,9 @@ public class Sistema {
                 exibirVendas();
             }
             //Exibir todos os vendedores
+            else if (opcaoDoUsuario == 5){
+                exibirVendedoresCadastrados();
+            }
             //Exibir todos os clientes
             //Sair do programa
             else if (opcaoDoUsuario == 7){

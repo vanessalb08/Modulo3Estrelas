@@ -12,7 +12,7 @@ public class ServicoVendedor {
         vendedores.add(novoVendedor);
         return novoVendedor;
     }
-
+    //Pesquisar vendedor pelo cpf
     public static Vendedor pesquisarVendedorPorCpf(String cpf) throws Exception{
         for (Vendedor vendedorReferencia : vendedores){
             if (vendedorReferencia.getCpf().equals(cpf)){
@@ -20,5 +20,14 @@ public class ServicoVendedor {
             }
         }
         throw new Exception("Vendedor não encontrado na nossa base. Por favor, digite novamente!");
+    }
+
+    //Exibir todas os vendedores cadastrados
+    public static void exibirVendedoresCadastrados(){
+        System.out.println("Quantidade de vendedores: "+ vendedores.size());
+        for (Vendedor vendedorReferencia : vendedores){
+            System.out.println("----------------------------");
+            System.out.println(vendedorReferencia);
+        }
     }
 }
