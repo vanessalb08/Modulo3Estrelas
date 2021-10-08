@@ -23,8 +23,8 @@ public class Cliente extends Pessoa{
     @Override
     public String toString() {
         StringBuilder retornaDados = new StringBuilder();
-        retornaDados.append(super.toString());
-        retornaDados.append("Data de nascimento: "+ dataNascimento);
+        retornaDados.append("\t"+super.toString());
+        retornaDados.append("\n\tData de nascimento: "+ dataNascimento);
         return retornaDados.toString();
     }
 }

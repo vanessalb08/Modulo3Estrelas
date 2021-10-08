@@ -23,8 +23,8 @@ public class Vendedor extends Pessoa{
     @Override
     public String toString() {
         StringBuilder retornaDados = new StringBuilder();
-        retornaDados.append(super.toString());
-        retornaDados.append("CTPS: "+ ctps);
+        retornaDados.append("\t"+super.toString());
+        retornaDados.append("\n\tCTPS: "+ ctps);
         return retornaDados.toString();
     }
 }
