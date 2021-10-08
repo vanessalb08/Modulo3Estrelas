@@ -1,8 +1,5 @@
 package br.com.zup.DesafioModulo3;
 
-import br.com.zup.ListasDeExercicios.Fatura.Consumidor;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -60,7 +57,10 @@ public class Sistema {
     public static void exibirVendedoresCadastrados(){
         ServicoVendedor.exibirVendedoresCadastrados();
     }
-
+    //Exibir clientes cadastrados
+    public static void exibirClientesCadastrados(){
+        ServicoCliente.exibirClientesCadastrados();
+    }
     public static boolean executar () throws Exception{
         boolean continuarMenu = true;
 
@@ -88,6 +88,9 @@ public class Sistema {
                 exibirVendedoresCadastrados();
             }
             //Exibir todos os clientes
+            else if (opcaoDoUsuario == 6){
+                exibirClientesCadastrados();
+            }
             //Sair do programa
             else if (opcaoDoUsuario == 7){
                 continuarMenu = false;

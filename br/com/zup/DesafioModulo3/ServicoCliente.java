@@ -21,4 +21,12 @@ public class ServicoCliente {
         }
         throw new Exception("Cliente não encontrado na nossa base. Por favor, digite novamente!");
     }
+    //Exibir clientes cadastrados
+    public static void exibirClientesCadastrados(){
+        System.out.println("Quantidade de clientes: "+clientes.size());
+        for (Cliente clienteReferencia : clientes){
+            System.out.println("----------------------------");
+            System.out.println(clienteReferencia);
+        }
+    }
 }
