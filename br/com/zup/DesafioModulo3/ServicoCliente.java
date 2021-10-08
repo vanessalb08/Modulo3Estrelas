@@ -12,6 +12,14 @@ public class ServicoCliente {
                 throw new Exception("E-mail inválido! Por favor digite um email válido.");
             }
     }
+    //Verificar CPF repetido
+    public static void verificarCpfRepetidoCliente(String cpfCliente) throws Exception{
+        for (Cliente clienteReferencia : clientes){
+            if (clienteReferencia.getCpf().equals(cpfCliente)){
+                throw new Exception("Esse CPF já está cadastrado em nossa base!");
+            }
+        }
+    }
     //Cadastrar cliente e adicioná-lo a lista de clientes
     public static Cliente cadastrarCliente(String nomeCliente, String cpfCliente, String emailCliente, String dataNascimento){
         Cliente novoCliente = new Cliente(nomeCliente,cpfCliente,emailCliente,dataNascimento);
