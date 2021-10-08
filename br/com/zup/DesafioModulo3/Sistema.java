@@ -16,6 +16,19 @@ public class Sistema {
         String emailCliente = receberDados("Digite o e-mail do cliente: ").nextLine();
         String dataNascimento = receberDados("Digite a data de nascimento do cliente: ").nextLine();
 
-        return ServicoCliente.cadastrarCliente(nomeCliente,cpfCliente,emailCliente,dataNascimento);
+        Cliente cliente = ServicoCliente.cadastrarCliente(nomeCliente,cpfCliente,emailCliente,dataNascimento);
+        System.out.println(cliente);
+        return cliente;
+    }
+
+    public static Vendedor cadastrarVendedor(){
+        String nomeVendedor = receberDados("Digite o nome do vendedor responsável: ").nextLine();
+        String cpfVendedor = receberDados("Digite o CPF do vendedor responsável: ").nextLine();
+        String emailVendedor = receberDados("Digite o e-mail do vendedor responsável: ").nextLine();
+        String ctps = receberDados("Digite a ctps do vendedor resposável: ").nextLine();
+
+        Vendedor vendedor = ServicoVendedor.cadastrarVendedores(nomeVendedor,cpfVendedor,emailVendedor,ctps);
+        System.out.println(vendedor);
+        return vendedor;
     }
 }
