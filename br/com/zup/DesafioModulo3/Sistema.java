@@ -67,6 +67,10 @@ public class Sistema {
                 Vendedor novoVendedor = cadastrarVendedor();
                 System.out.println(novoVendedor);
             }
+            else if (opcaoDoUsuario == 3){
+                Venda novaVenda = cadastrarVenda();
+                System.out.println(novaVenda);
+            }
             else if (opcaoDoUsuario == 7){
                 continuarMenu = false;
                 System.out.println("Obrigada por usar nossos serviços. Até Mais!");
