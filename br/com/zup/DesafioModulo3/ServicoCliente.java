@@ -6,6 +6,12 @@ import java.util.List;
 public class ServicoCliente {
     private static List<Cliente> clientes = new ArrayList<>();
 
+    //Verificar e-mail válido
+    public static void verificarEmailValidoCliente(String emaiCliente) throws Exception{
+            if (!emaiCliente.contains("@")){
+                throw new Exception("E-mail inválido! Por favor digite um email válido.");
+            }
+    }
     //Cadastrar cliente e adicioná-lo a lista de clientes
     public static Cliente cadastrarCliente(String nomeCliente, String cpfCliente, String emailCliente, String dataNascimento){
         Cliente novoCliente = new Cliente(nomeCliente,cpfCliente,emailCliente,dataNascimento);

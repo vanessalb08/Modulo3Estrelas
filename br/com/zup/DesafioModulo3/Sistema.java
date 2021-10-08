@@ -19,10 +19,11 @@ public class Sistema {
         System.out.println("[7] - Sair do programa");
     }
     //Cadastrar cliente
-    public static Cliente cadastrarCliente() {
+    public static Cliente cadastrarCliente() throws Exception{
         String nomeCliente = receberDados("Digite o nome do cliente: ").nextLine();
         String cpfCliente = receberDados("Digite o CPF do cliente: ").nextLine();
         String emailCliente = receberDados("Digite o e-mail do cliente: ").nextLine();
+        ServicoCliente.verificarEmailValidoCliente(emailCliente);
         String dataNascimento = receberDados("Digite a data de nascimento do cliente: ").nextLine();
 
         Cliente cliente = ServicoCliente.cadastrarCliente(nomeCliente, cpfCliente, emailCliente, dataNascimento);
