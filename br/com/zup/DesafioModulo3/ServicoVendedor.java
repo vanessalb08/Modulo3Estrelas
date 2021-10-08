@@ -12,4 +12,13 @@ public class ServicoVendedor {
         vendedores.add(novoVendedor);
         return novoVendedor;
     }
+
+    public static Vendedor pesquisarVendedor(String cpf) throws Exception{
+        for (Vendedor vendedorReferencia : vendedores){
+            if (vendedorReferencia.getCpf().equals(cpf)){
+                return vendedorReferencia;
+            }
+        }
+        throw new Exception("Vendedor não encontrado na nossa base. Por favor, digite novamente!");
+    }
 }

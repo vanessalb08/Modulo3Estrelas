@@ -19,6 +19,6 @@ public class ServicoCliente {
                 return clienteReferencia;
             }
         }
-        throw new Exception("Cliente não cadastrado!");
+        throw new Exception("Cliente não encontrado na nossa base. Por favor, digite novamente!");
     }
 }
