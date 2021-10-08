@@ -14,4 +14,11 @@ public class ServicoVenda {
         vendas.add(novaVenda);
         return novaVenda;
     }
+    public static void exibirVendas(){
+        System.out.println("Quantidade de vendas: "+vendas.size());
+        for (Venda vendaReferencia : vendas){
+            System.out.println("----------------------------");
+            System.out.println(vendaReferencia);
+        }
+    }
 }

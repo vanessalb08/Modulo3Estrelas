@@ -2,6 +2,7 @@ package br.com.zup.DesafioModulo3;
 
 import br.com.zup.ListasDeExercicios.Fatura.Consumidor;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -51,6 +52,9 @@ public class Sistema {
         Venda novaVenda = ServicoVenda.cadastrarVenda(cpfCliente,cpfVendedor,valorPago,dataRegistro);
         return novaVenda;
     }
+    public static void exibirVendas(){
+        ServicoVenda.exibirVendas();
+    }
 
     public static boolean executar () throws Exception{
         boolean continuarMenu = true;
@@ -62,15 +66,21 @@ public class Sistema {
             if (opcaoDoUsuario == 1){
                 Cliente novoCliente = cadastrarCliente();
                 System.out.println(novoCliente);
-            }
+            }//Cadastrar Vendedor
             else if (opcaoDoUsuario == 2){
                 Vendedor novoVendedor = cadastrarVendedor();
                 System.out.println(novoVendedor);
-            }
+            }//Cadastrar Venda
             else if (opcaoDoUsuario == 3){
                 Venda novaVenda = cadastrarVenda();
                 System.out.println(novaVenda);
+            }//Exibir todas as vendas
+            else if (opcaoDoUsuario == 4){
+                exibirVendas();
             }
+            //Exibir todos os vendedores
+            //Exibir todos os clientes
+            //Sair do programa
             else if (opcaoDoUsuario == 7){
                 continuarMenu = false;
                 System.out.println("Obrigada por usar nossos serviços. Até Mais!");
@@ -79,14 +89,4 @@ public class Sistema {
 
         return continuarMenu;
     }
-
-    /*
-        System.out.println("[2] - Cadastrar vendedor");
-        System.out.println("[3] - Cadastrar nova venda");
-        System.out.println("[4] - Mostrar todas as vendas");
-        System.out.println("[5] - Mostrar todos os vendedores");
-        System.out.println("[6] - Mostrar todos os clientes");
-        System.out.println("[7] - Sair do programa");
-     */
-
 }
