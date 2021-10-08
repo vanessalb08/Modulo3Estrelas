@@ -63,7 +63,11 @@ public class Sistema {
                 Cliente novoCliente = cadastrarCliente();
                 System.out.println(novoCliente);
             }
-            if (opcaoDoUsuario == 7){
+            else if (opcaoDoUsuario == 2){
+                Vendedor novoVendedor = cadastrarVendedor();
+                System.out.println(novoVendedor);
+            }
+            else if (opcaoDoUsuario == 7){
                 continuarMenu = false;
                 System.out.println("Obrigada por usar nossos serviços. Até Mais!");
             }
@@ -73,7 +77,6 @@ public class Sistema {
     }
 
     /*
-    "[1] - Cadastrar cliente");
         System.out.println("[2] - Cadastrar vendedor");
         System.out.println("[3] - Cadastrar nova venda");
         System.out.println("[4] - Mostrar todas as vendas");
