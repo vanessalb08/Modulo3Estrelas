@@ -20,6 +20,13 @@ public class ServicoCliente {
             }
         }
     }
+    public static void verificarEmailRepetidoCliente(String emailCliente)throws Exception{
+        for (Cliente clienteReferencia :clientes){
+            if (clienteReferencia.getEmail().equalsIgnoreCase(emailCliente)){
+                throw new Exception("Esse e-mail já está cadastrado na nossa base!");
+            }
+        }
+    }
     //Cadastrar cliente e adicioná-lo a lista de clientes
     public static Cliente cadastrarCliente(String nomeCliente, String cpfCliente, String emailCliente, String dataNascimento){
         Cliente novoCliente = new Cliente(nomeCliente,cpfCliente,emailCliente,dataNascimento);

@@ -25,6 +25,7 @@ public class Sistema {
         ServicoCliente.verificarCpfRepetidoCliente(cpfCliente);
         String emailCliente = receberDados("Digite o e-mail do cliente: ").nextLine();
         ServicoCliente.verificarEmailValidoCliente(emailCliente);
+        ServicoCliente.verificarEmailRepetidoCliente(emailCliente);
         String dataNascimento = receberDados("Digite a data de nascimento do cliente: ").nextLine();
 
         Cliente cliente = ServicoCliente.cadastrarCliente(nomeCliente, cpfCliente, emailCliente, dataNascimento);
