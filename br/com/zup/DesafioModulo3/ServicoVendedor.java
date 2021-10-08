@@ -13,7 +13,7 @@ public class ServicoVendedor {
         return novoVendedor;
     }
 
-    public static Vendedor pesquisarVendedor(String cpf) throws Exception{
+    public static Vendedor pesquisarVendedorPorCpf(String cpf) throws Exception{
         for (Vendedor vendedorReferencia : vendedores){
             if (vendedorReferencia.getCpf().equals(cpf)){
                 return vendedorReferencia;

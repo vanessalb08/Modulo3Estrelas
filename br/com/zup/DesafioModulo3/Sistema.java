@@ -10,6 +10,16 @@ public class Sistema {
         System.out.println(mensagem);
         return new Scanner(System.in);
     }
+    public static void menu(){
+        System.out.println("==========Registro de Vendas==========");
+        System.out.println("[1] - Cadastrar cliente");
+        System.out.println("[2] - Cadastrar vendedor");
+        System.out.println("[3] - Cadastrar nova venda");
+        System.out.println("[4] - Mostrar todas as vendas");
+        System.out.println("[5] - Mostrar todos os vendedores");
+        System.out.println("[6] - Mostrar todos os clientes");
+        System.out.println("[7] - Sair do programa");
+    }
     //Cadastrar cliente
     public static Cliente cadastrarCliente() {
         String nomeCliente = receberDados("Digite o nome do cliente: ").nextLine();
@@ -44,5 +54,18 @@ public class Sistema {
         System.out.println(novaVenda);
         return novaVenda;
     }
+
+
+    }
+
+    /*
+    "[1] - Cadastrar cliente");
+        System.out.println("[2] - Cadastrar vendedor");
+        System.out.println("[3] - Cadastrar nova venda");
+        System.out.println("[4] - Mostrar todas as vendas");
+        System.out.println("[5] - Mostrar todos os vendedores");
+        System.out.println("[6] - Mostrar todos os clientes");
+        System.out.println("[7] - Sair do programa");
+     */
 
 }

@@ -13,7 +13,7 @@ public class ServicoCliente {
         return novoCliente;
     }
     //Pesquisar cliente pelo CPF
-    public static Cliente pesquisarCliente(String cpfCliente) throws Exception{
+    public static Cliente pesquisarClientePorCpf(String cpfCliente) throws Exception{
         for (Cliente clienteReferencia : clientes){
             if (clienteReferencia.getCpf().equals(cpfCliente)){
                 return clienteReferencia;
