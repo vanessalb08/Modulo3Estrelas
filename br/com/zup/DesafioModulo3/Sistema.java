@@ -28,7 +28,6 @@ public class Sistema {
         String dataNascimento = receberDados("Digite a data de nascimento do cliente: ").nextLine();
 
         Cliente cliente = ServicoCliente.cadastrarCliente(nomeCliente, cpfCliente, emailCliente, dataNascimento);
-        System.out.println(cliente);
         return cliente;
     }
     //Cadastrar Vendedor
@@ -39,7 +38,6 @@ public class Sistema {
         String ctps = receberDados("Digite a ctps do vendedor resposável: ").nextLine();
 
         Vendedor vendedor = ServicoVendedor.cadastrarVendedores(nomeVendedor, cpfVendedor, emailVendedor, ctps);
-        System.out.println(vendedor);
         return vendedor;
     }
 
@@ -51,11 +49,27 @@ public class Sistema {
         String dataRegistro = receberDados("Digite a data que a venda foi registrada: ").nextLine();
 
         Venda novaVenda = ServicoVenda.cadastrarVenda(cpfCliente,cpfVendedor,valorPago,dataRegistro);
-        System.out.println(novaVenda);
         return novaVenda;
     }
 
+    public static boolean executar () throws Exception{
+        boolean continuarMenu = true;
 
+        while (continuarMenu){
+            menu();
+            int opcaoDoUsuario = receberDados("Digite a opção desejada: ").nextInt();
+            //Cadastrar cliente
+            if (opcaoDoUsuario == 1){
+                Cliente novoCliente = cadastrarCliente();
+                System.out.println(novoCliente);
+            }
+            if (opcaoDoUsuario == 7){
+                continuarMenu = false;
+                System.out.println("Obrigada por usar nossos serviços. Até Mais!");
+            }
+        }
+
+        return continuarMenu;
     }
 
     /*
