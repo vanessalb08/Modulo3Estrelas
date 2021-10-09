@@ -25,6 +25,14 @@ public class ServicoVendedor {
                 throw new Exception("Esse CPF já está cadastrado em nossa base!");
         }
     }
+    //Verificar email repetido
+    public static void verificarEmailRepetidoVendedor(String emailVendedor) throws Exception{
+        for (Vendedor vendedorReferencia : vendedores){
+            if (vendedorReferencia.getEmail().equalsIgnoreCase(emailVendedor)){
+                throw new Exception("Já existe vendedor cadastrado com esse e-mail.");
+            }
+        }
+    }
     //Pesquisar vendedor pelo cpf
     public static Vendedor pesquisarVendedorPorCpf(String cpf) throws Exception{
         for (Vendedor vendedorReferencia : vendedores){

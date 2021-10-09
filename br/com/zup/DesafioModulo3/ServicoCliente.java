@@ -23,7 +23,7 @@ public class ServicoCliente {
     public static void verificarEmailRepetidoCliente(String emailCliente)throws Exception{
         for (Cliente clienteReferencia :clientes){
             if (clienteReferencia.getEmail().equalsIgnoreCase(emailCliente)){
-                throw new Exception("Esse e-mail já está cadastrado na nossa base!");
+                throw new Exception("Já existe cliente cadastrado com esse e-mail.");
             }
         }
     }

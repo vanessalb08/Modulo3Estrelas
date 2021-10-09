@@ -38,6 +38,7 @@ public class Sistema {
         ServicoVendedor.verificarCpfRepetidoVendedor(cpfVendedor);
         String emailVendedor = receberDados("Digite o e-mail do vendedor responsável: ").nextLine();
         ServicoVendedor.verificarEmailValidoVendedor(emailVendedor);
+        ServicoVendedor.verificarEmailRepetidoVendedor(emailVendedor);
         String ctps = receberDados("Digite a ctps do vendedor resposável: ").nextLine();
 
         Vendedor vendedor = ServicoVendedor.cadastrarVendedores(nomeVendedor, cpfVendedor, emailVendedor, ctps);
