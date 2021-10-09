@@ -18,6 +18,7 @@ public class Sistema {
         System.out.println("[5] - Mostrar todos os vendedores");
         System.out.println("[6] - Mostrar todos os clientes");
         System.out.println("[7] - Exibir compras de um cliente");
+        System.out.println("[8] - Exibir vendas de um vendedor");
         System.out.println("[9] - Sair do programa");
     }
     //Cadastrar cliente
@@ -63,6 +64,13 @@ public class Sistema {
         ServicoCliente.pesquisarClientePorCpf(cpfCliente);
         List<Venda> comprasCliente = ServicoVenda.exibirComprasCliente(cpfCliente);
         return comprasCliente;
+    }
+    public static List<Venda> exibirVendasVendedorEmail()throws Exception{
+        String emailVendedor = receberDados("Digite o e-mail do vendedor que deseja consultar:").nextLine();
+        ServicoVendedor.verificarEmailValidoVendedor(emailVendedor);
+        ServicoVendedor.pesquisarVendedorPorEmail(emailVendedor);
+        List<Venda> vendasVendedor = ServicoVenda.exibirVendasVendedorEmail(emailVendedor);
+        return vendasVendedor;
     }
     //Exibir Vendas Cadastradas
     public static void exibirVendas(){
@@ -110,6 +118,11 @@ public class Sistema {
                 List<Venda> comprasCliente = exibirComprasCliente();
                 System.out.println("Quantidade de compras do cliente: " + comprasCliente.size());
                 System.out.println(comprasCliente);
+            }
+            else if (opcaoDoUsuario == 8){
+                List<Venda> vendasVendedor = exibirVendasVendedorEmail();
+                System.out.println("Quantidade de vendas do vendedor: " + vendasVendedor.size());
+                System.out.println(vendasVendedor);
             }
             //Sair do programa
             else if (opcaoDoUsuario == 9){

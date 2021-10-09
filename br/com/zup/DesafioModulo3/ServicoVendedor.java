@@ -42,6 +42,16 @@ public class ServicoVendedor {
         }
         throw new Exception("Vendedor não encontrado na nossa base. Por favor, digite novamente!");
     }
+    //Pesquisar vendedor por e-mail
+    public static Vendedor pesquisarVendedorPorEmail(String emailVendedor) throws Exception{
+        for (Vendedor vendedorReferencia : vendedores){
+            if (vendedorReferencia.getEmail().equals(emailVendedor)){
+                return vendedorReferencia;
+            }
+        }
+        throw new Exception("Vendedor não encontrado na nossa base. Por favor, digite novamente!");
+
+    }
 
     //Exibir todas os vendedores cadastrados
     public static void exibirVendedoresCadastrados(){
