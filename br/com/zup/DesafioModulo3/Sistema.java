@@ -1,5 +1,6 @@
 package br.com.zup.DesafioModulo3;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -16,7 +17,8 @@ public class Sistema {
         System.out.println("[4] - Mostrar todas as vendas");
         System.out.println("[5] - Mostrar todos os vendedores");
         System.out.println("[6] - Mostrar todos os clientes");
-        System.out.println("[7] - Sair do programa");
+        System.out.println("[7] - Exibir compras de um cliente");
+        System.out.println("[9] - Sair do programa");
     }
     //Cadastrar cliente
     public static Cliente cadastrarCliente() throws Exception{
@@ -54,6 +56,13 @@ public class Sistema {
 
         Venda novaVenda = ServicoVenda.cadastrarVenda(cpfCliente,cpfVendedor,valorPago,dataRegistro);
         return novaVenda;
+    }
+    //Pesquisar compras de um cliente
+    public static List<Venda> exibirComprasCliente() throws Exception{
+        String cpfCliente = receberDados("Digite o CPF do cliente que deseja consultar:").nextLine();
+        ServicoCliente.pesquisarClientePorCpf(cpfCliente);
+        List<Venda> comprasCliente = ServicoVenda.exibirComprasCliente(cpfCliente);
+        return comprasCliente;
     }
     //Exibir Vendas Cadastradas
     public static void exibirVendas(){
@@ -97,8 +106,13 @@ public class Sistema {
             else if (opcaoDoUsuario == 6){
                 exibirClientesCadastrados();
             }
-            //Sair do programa
             else if (opcaoDoUsuario == 7){
+                List<Venda> comprasCliente = exibirComprasCliente();
+                System.out.println("Quantidade de compras do cliente: " + comprasCliente.size());
+                System.out.println(comprasCliente);
+            }
+            //Sair do programa
+            else if (opcaoDoUsuario == 9){
                 continuarMenu = false;
                 System.out.println("Obrigada por usar nossos serviços. Até Mais!");
             }
