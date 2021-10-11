@@ -115,8 +115,13 @@ public class Sistema {
                 }
             }//Cadastrar Vendedor
             else if (opcaoDoUsuario == 2){
-                Vendedor novoVendedor = cadastrarVendedor();
-                System.out.println(novoVendedor);
+                boolean continuarCadastro = true;
+                while (continuarCadastro){
+                    Vendedor novoVendedor = cadastrarVendedor();
+                    System.out.println("-----Vendedor Cadastrado-----");
+                    System.out.println(novoVendedor);
+                    continuarCadastro = continuarCadastro();
+                }
             }//Cadastrar Venda
             else if (opcaoDoUsuario == 3){
                 Venda novaVenda = cadastrarVenda();
