@@ -124,8 +124,13 @@ public class Sistema {
                 }
             }//Cadastrar Venda
             else if (opcaoDoUsuario == 3){
-                Venda novaVenda = cadastrarVenda();
-                System.out.println(novaVenda);
+                boolean continuarCadastro = true;
+                while (continuarCadastro) {
+                    Venda novaVenda = cadastrarVenda();
+                    System.out.println("-----Venda Cadastrada-----");
+                    System.out.println(novaVenda);
+                    continuarCadastro = continuarCadastro();
+                }
             }//Exibir todas as vendas
             else if (opcaoDoUsuario == 4){
                 exibirVendas();
