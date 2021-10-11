@@ -84,6 +84,20 @@ public class Sistema {
     public static void exibirClientesCadastrados(){
         ServicoCliente.exibirClientesCadastrados();
     }
+    //Continuar inserindo
+    public static boolean continuarCadastro(){
+            String opcao = receberDados("Deseja inserir mais algum? [Sim/Não]").nextLine();
+            if (opcao.equalsIgnoreCase("sim")){
+                System.out.println("--------Informe novos dados--------");
+            }
+            else if (opcao.equalsIgnoreCase("Não")){
+                return false;
+            }
+            else{
+                System.out.println("Opção inválida!");
+            }
+        return true;
+    }
     public static boolean executar () throws Exception{
         boolean continuarMenu = true;
 
@@ -92,8 +106,13 @@ public class Sistema {
             int opcaoDoUsuario = receberDados("Digite a opção desejada: ").nextInt();
             //Cadastrar cliente
             if (opcaoDoUsuario == 1){
-                Cliente novoCliente = cadastrarCliente();
-                System.out.println(novoCliente);
+                boolean continuarCadastro = true;
+                while (continuarCadastro){
+                    Cliente novoCliente = cadastrarCliente();
+                    System.out.println("-----Cliente Cadastrado-----");
+                    System.out.println(novoCliente);
+                    continuarCadastro = continuarCadastro();
+                }
             }//Cadastrar Vendedor
             else if (opcaoDoUsuario == 2){
                 Vendedor novoVendedor = cadastrarVendedor();
